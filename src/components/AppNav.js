@@ -2,7 +2,11 @@ import React from 'react';
 import AppBar from 'material-ui/AppBar';
 import Drawer from 'material-ui/Drawer';
 import MenuItem from 'material-ui/MenuItem';
-import FlatButtonExampleSimple from './test';
+import ContentNumber from './ContentNumber';
+import ContentCharacter from './ContentCharacter';
+// import FlatButtonExampleSimple from './test';
+
+import './AppNav.css';
 
 export default class AppNav extends React.Component {
 
@@ -25,15 +29,17 @@ export default class AppNav extends React.Component {
   }
 
   getContent() {
-    console.log(this.state.type);
-    if (this.state.type !== 0) {
-      return <FlatButtonExampleSimple />;
+    switch (this.state.type) {
+      case 1:
+        return <ContentNumber />;
+      case 2:
+        return <ContentCharacter />;
+      default:
+        return <button />;
     }
-    return <button />;
   }
 
   render() {
-
     return (
       <div>
         <AppBar title="Random" onLeftIconButtonClick={this.handleToggle} />
@@ -44,7 +50,7 @@ export default class AppNav extends React.Component {
           onRequestChange={(open) => this.setState({open})}
         >
           <MenuItem onClick={this.handleClick.bind(this, 1)}>数字</MenuItem>
-          <MenuItem onClick={this.handleClose}>英文字母</MenuItem>
+          <MenuItem onClick={this.handleClick.bind(this, 2)}>英文字母</MenuItem>
           <MenuItem onClick={this.handleClose}>骰子</MenuItem>
           <MenuItem onClick={this.handleClose}>是否</MenuItem>
           <MenuItem onClick={this.handleClose}>硬币</MenuItem>
