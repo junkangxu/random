@@ -9,8 +9,8 @@ A set of tools using randomizations to help you make decisions
 
 ## TODO
 - [x] Environment setup (1/5)
-- [ ] Number
-- [ ] Characters
+- [x] Number (1/6)
+- [x] Characters (1/7)
 - [ ] Dice
 - [ ] Y or N
 - [ ] Coin
