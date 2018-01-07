@@ -17,9 +17,9 @@ A set of tools using randomizations to help you make decisions
   - [x] Coin (1/7)
   - [ ] Map
   - [x] Poker (1/7)
-  - [ ] Majong
-  - [ ] List
-    - [ ] Shuffle
-    - [ ] Pick from
-  - [x] Scissor, Paper, Rock
-  - [x] Hand Front and Back
+  - [x] Mahjong (1/7)
+  - [x] List (1/7)
+    - [x] Shuffle (1/7)
+    - [x] Pick from (1/7)
+  - [x] Scissor, Paper, Rock (1/7)
+  - [x] Hand Front and Back (1/7)

@@ -10,7 +10,9 @@ import ContentCoin from './ContentCoin';
 import ContentPoker from './ContentPoker';
 import ContentSPR from './ContentSPR';
 import ContentHandFrontBack from './ContentHandFrontBack';
-import Test from './test';
+import ContentList from './ContentList';
+import ContentMahjong from './ContentMahjong';
+// import Test from './test';
 // import FlatButtonExampleSimple from './test';
 import './AppNav.css';
 
@@ -46,6 +48,10 @@ export default class AppNav extends React.Component {
         return <ContentCoin />;
       case 7:
         return <ContentPoker />;
+      case 8:
+        return <ContentMahjong />;
+      case 9:
+        return <ContentList />;
       case 10:
         return <ContentSPR />;
       case 11:
@@ -72,8 +78,8 @@ export default class AppNav extends React.Component {
           <MenuItem onClick={this.handleClick.bind(this, 5)}>硬币</MenuItem>
           <MenuItem onClick={this.handleClose}>地图</MenuItem>
           <MenuItem onClick={this.handleClick.bind(this, 7)}>扑克牌</MenuItem>
-          <MenuItem onClick={this.handleClose}>麻将</MenuItem>
-          <MenuItem onClick={this.handleClose}>列表</MenuItem>
+          <MenuItem onClick={this.handleClick.bind(this, 8)}>麻将</MenuItem>
+          <MenuItem onClick={this.handleClick.bind(this, 9)}>列表</MenuItem>
           <MenuItem onClick={this.handleClick.bind(this, 10)}>剪刀石头布</MenuItem>
           <MenuItem onClick={this.handleClick.bind(this, 11)}>手心手背</MenuItem>
         </Drawer>
