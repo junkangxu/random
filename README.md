@@ -9,16 +9,17 @@ A set of tools using randomizations to help you make decisions
 
 ## TODO
 - [x] Environment setup (1/5)
-- [x] Number (1/6)
-- [x] Characters (1/7)
-- [ ] Dice
-- [ ] Y or N
-- [ ] Coin
-- [ ] Map
-- [ ] Poker
-- [ ] Majong
-- [ ] List
-  - [ ] Shuffle
-  - [ ] Pick from
-- [ ] Scissor, Paper, Rock
-- [ ] Hand Front and Back
+- [ ] Rough implementation
+  - [x] Number (1/6)
+  - [x] Characters (1/7)
+  - [x] Dice (1/7)
+  - [x] Y or N (1/7)
+  - [x] Coin (1/7)
+  - [ ] Map
+  - [x] Poker (1/7)
+  - [ ] Majong
+  - [ ] List
+    - [ ] Shuffle
+    - [ ] Pick from
+  - [ ] Scissor, Paper, Rock
+  - [ ] Hand Front and Back

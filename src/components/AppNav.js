@@ -4,6 +4,10 @@ import Drawer from 'material-ui/Drawer';
 import MenuItem from 'material-ui/MenuItem';
 import ContentNumber from './ContentNumber';
 import ContentCharacter from './ContentCharacter';
+import ContentDice from './ContentDice';
+import ContentYesOrNo from './ContentYesOrNo';
+import ContentCoin from './ContentCoin';
+import ContentPoker from './ContentPoker';
 // import FlatButtonExampleSimple from './test';
 
 import './AppNav.css';
@@ -12,8 +16,6 @@ export default class AppNav extends React.Component {
 
   constructor(props) {
     super(props);
-    // this.handleClick = this.handleClick.bind(this);
-    // this.handleClick = this.handleClick.bind(this);
     this.state = {
       open: false,
       type: 0
@@ -34,6 +36,14 @@ export default class AppNav extends React.Component {
         return <ContentNumber />;
       case 2:
         return <ContentCharacter />;
+      case 3:
+        return <ContentDice />;
+      case 4:
+        return <ContentYesOrNo />;
+      case 5:
+        return <ContentCoin />;
+      case 7:
+        return <ContentPoker />;
       default:
         return <button />;
     }
@@ -51,11 +61,11 @@ export default class AppNav extends React.Component {
         >
           <MenuItem onClick={this.handleClick.bind(this, 1)}>数字</MenuItem>
           <MenuItem onClick={this.handleClick.bind(this, 2)}>英文字母</MenuItem>
-          <MenuItem onClick={this.handleClose}>骰子</MenuItem>
-          <MenuItem onClick={this.handleClose}>是否</MenuItem>
-          <MenuItem onClick={this.handleClose}>硬币</MenuItem>
+          <MenuItem onClick={this.handleClick.bind(this, 3)}>骰子</MenuItem>
+          <MenuItem onClick={this.handleClick.bind(this, 4)}>是否</MenuItem>
+          <MenuItem onClick={this.handleClick.bind(this, 5)}>硬币</MenuItem>
           <MenuItem onClick={this.handleClose}>地图</MenuItem>
-          <MenuItem onClick={this.handleClose}>扑克牌</MenuItem>
+          <MenuItem onClick={this.handleClick.bind(this, 7)}>扑克牌</MenuItem>
           <MenuItem onClick={this.handleClose}>麻将</MenuItem>
           <MenuItem onClick={this.handleClose}>列表</MenuItem>
           <MenuItem onClick={this.handleClose}>剪刀石头布</MenuItem>
