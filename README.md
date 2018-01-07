@@ -21,5 +21,5 @@ A set of tools using randomizations to help you make decisions
   - [ ] List
     - [ ] Shuffle
     - [ ] Pick from
-  - [ ] Scissor, Paper, Rock
-  - [ ] Hand Front and Back
+  - [x] Scissor, Paper, Rock
+  - [x] Hand Front and Back
