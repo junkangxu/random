@@ -2,21 +2,9 @@ import React from 'react';
 import RaisedButton from 'material-ui/RaisedButton';
 import { RadioButton, RadioButtonGroup } from 'material-ui/RadioButton';
 import getRandomInt from '../utils/generateRandom';
+import Divider from 'material-ui/Divider';
 
 import './ContentDice.css';
-
-const style = {
-  margin: 12
-};
-
-const styles = {
-  block: {
-    maxWidth: 250,
-  },
-  radioButton: {
-    marginBottom: 16,
-  },
-};
 
 export default class ContentDice extends React.Component {
 
@@ -37,7 +25,7 @@ export default class ContentDice extends React.Component {
 
   getRandomDice() {
     let type = this.state.type;
-    if (type == "one") {
+    if (type === "one") {
       let retVal = [];
       let randomInt = getRandomInt(1, 6);
       retVal.push(randomInt);
@@ -65,6 +53,10 @@ export default class ContentDice extends React.Component {
   render() {
     return (
       <div>
+        <div className="header">
+          <h3>骰子</h3>
+          <Divider />
+        </div>
         <div className="radioDiv">
           <RadioButtonGroup
             name="shipSpeed"
@@ -72,22 +64,21 @@ export default class ContentDice extends React.Component {
             onChange={this.handleRadioChange}
           >
             <RadioButton
+              className="radio"
               value="one"
-              label="one dice"
-              style={styles.radioButton}
+              label="one dice at a time"
             />
             <RadioButton
+              className="radio"
               value="two"
-              label="two dices"
-              style={styles.radioButton}
+              label="two dices at a time"
             />
           </RadioButtonGroup>
         </div>
         <div className="buttonDiv">
           <RaisedButton
-            label="Primary"
+            label="GET"
             primary={true}
-            style={style}
             onClick={this.getRandomDice}
           />
         </div>

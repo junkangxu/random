@@ -1,0 +1,25 @@
+.header {
+  text-align: center;
+  margin-left: 2%;
+  margin-right: 2%;
+}
+
+.body {
+  margin-left: 6%;
+  margin-right: 6%;
+}
+
+.bodyLeft {
+  width: 50%;
+  float: left;
+}
+
+.bodyRight {
+  width: 50%;
+  float: right;
+}
+
+.listBody {
+  width: 300px;
+  margin: 0 auto;
+}

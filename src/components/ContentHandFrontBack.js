@@ -3,6 +3,7 @@ import RaisedButton from 'material-ui/RaisedButton';
 import SelectField from 'material-ui/SelectField';
 import MenuItem from 'material-ui/MenuItem';
 import getRandomInt from '../utils/generateRandom';
+import Divider from 'material-ui/Divider';
 
 import './ContentHandFrontBack.css';
 
@@ -53,6 +54,10 @@ export default class ContentHandFrontBack extends React.Component {
   render() {
     return (
       <div>
+        <div className="header">
+          <h3>手心手背</h3>
+          <Divider />
+        </div>
         <div className="selectDiv">
           <SelectField
             value={this.state.numOfPeople}
@@ -64,7 +69,7 @@ export default class ContentHandFrontBack extends React.Component {
         </div>
         <div className="buttonDiv">
           <RaisedButton
-            label="Primary"
+            label="GET"
             primary={true}
             onClick={this.getRandomHand}
           />

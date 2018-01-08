@@ -1,6 +1,7 @@
 import React from 'react';
 import RaisedButton from 'material-ui/RaisedButton';
 import getRandomInt from '../utils/generateRandom';
+import Divider from 'material-ui/Divider';
 
 import './ContentSPR.css';
 
@@ -36,9 +37,13 @@ export default class ContentSPR extends React.Component {
   render() {
     return (
       <div>
+        <div className="header">
+          <h3>剪刀石头布</h3>
+          <Divider />
+        </div>
         <div className="buttonDiv">
           <RaisedButton
-            label="Primary"
+            label="GET"
             primary={true}
             onClick={this.getResult}
           />

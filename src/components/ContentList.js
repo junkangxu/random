@@ -83,7 +83,7 @@ export default class ChipExampleArray extends React.Component {
       let retVal = "";
       for (let j = 0; j < tmpList.length; j++) {
         retVal += tmpList[j];
-        retVal += "  ";
+        retVal += "   ";
       }
       this.setState({result: retVal});
     } else {
@@ -111,14 +111,14 @@ export default class ChipExampleArray extends React.Component {
       <div>
         <div className="inputDiv">
           <TextField
-            hintText="Hint Text"
-            floatingLabelText="Floating Label Text"
+            hintText="Input Field"
+            floatingLabelText="Your Input"
             onChange={this.handleInputChange}
           />
         </div>
         <div className="buttonDiv">
           <RaisedButton
-            label="Primary"
+            label="ADD"
             primary={true}
             onClick={this.addToList}
           />
@@ -146,7 +146,7 @@ export default class ChipExampleArray extends React.Component {
         </div>
         <div className="buttonDiv">
           <RaisedButton
-            label="Primary"
+            label="GET"
             primary={true}
             onClick={this.getResult}
           />

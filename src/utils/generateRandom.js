@@ -16,7 +16,7 @@ function getRandomCharacterHelper(str) {
 
 export function getRandomMahjong() {
   const maxNum = 34;
-  let randomInt = getRandomInt(0, 34);
+  let randomInt = getRandomInt(0, maxNum);
   let randomNumber = getRandomInt(1, 9);
   let randomOther = getRandomInt(1, 7);
   let type = mahjongList[randomInt];

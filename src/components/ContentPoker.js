@@ -1,6 +1,7 @@
 import React from 'react';
 import RaisedButton from 'material-ui/RaisedButton';
 import getRandomInt from '../utils/generateRandom';
+import Divider from 'material-ui/Divider';
 
 import './ContentPoker.css';
 
@@ -44,9 +45,9 @@ export default class ContentPoker extends React.Component {
     let newResultBody;
     if (randomInt <= 10) {
       newResultBody = randomInt;
-    } else if (randomInt == 11) {
+    } else if (randomInt === 11) {
       newResultBody = "J";
-    } else if (randomInt == 12) {
+    } else if (randomInt === 12) {
       newResultBody = "Q";
     } else {
       newResultBody = "K";
@@ -62,9 +63,13 @@ export default class ContentPoker extends React.Component {
   render() {
     return (
       <div>
+        <div className="header">
+          <h3>扑克牌</h3>
+          <Divider />
+        </div>
         <div className="buttonDiv">
           <RaisedButton
-            label="Primary"
+            label="GET"
             primary={true}
             onClick={this.getResult}
           />

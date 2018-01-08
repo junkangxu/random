@@ -2,6 +2,7 @@ import React from 'react';
 import RaisedButton from 'material-ui/RaisedButton';
 import { RadioButton, RadioButtonGroup } from 'material-ui/RadioButton';
 import { getRandomCharacter } from '../utils/generateRandom';
+import Divider from 'material-ui/Divider';
 
 import './ContentCharacter.css';
 
@@ -38,6 +39,10 @@ export default class ContentCharacter extends React.Component {
   render() {
     return (
       <div>
+        <div className="header">
+          <h3>英文字母</h3>
+          <Divider />
+        </div>
         <div className="radioDiv">
           <RadioButtonGroup
             name="shipSpeed"
@@ -63,7 +68,7 @@ export default class ContentCharacter extends React.Component {
         </div>
         <div className="buttonDiv">
           <RaisedButton
-            label="Primary"
+            label="GET"
             primary={true}
             onClick={this.getRandomCharacter}
           />

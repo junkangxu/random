@@ -2,6 +2,7 @@ import React from 'react';
 import TextField from 'material-ui/TextField';
 import RaisedButton from 'material-ui/RaisedButton';
 import getRandomInt from '../utils/generateRandom';
+import Divider from 'material-ui/Divider';
 
 import './ContentNumber.css';
 
@@ -41,6 +42,10 @@ export default class ContentNumber extends React.Component {
   render() {
     return (
       <div className="contentDiv">
+        <div className="header">
+          <h3>数字</h3>
+          <Divider />
+        </div>
         <div className="inputDiv">
           <TextField
             hintText="minValueField"
@@ -55,7 +60,7 @@ export default class ContentNumber extends React.Component {
         </div>
         <div className="buttonDiv">
           <RaisedButton
-            label="Primary"
+            label="GET"
             primary={true}
             onClick={this.getResult}
           />
