@@ -2,9 +2,7 @@ import React from 'react';
 import RaisedButton from 'material-ui/RaisedButton';
 import getRandomInt from '../utils/generateRandom';
 
-const style = {
-  margin: 12
-};
+import './ContentSPR.css';
 
 export default class ContentSPR extends React.Component {
 
@@ -38,13 +36,16 @@ export default class ContentSPR extends React.Component {
   render() {
     return (
       <div>
-        <RaisedButton
-          label="Primary"
-          primary={true}
-          style={style}
-          onClick={this.getResult}
-        />
-        <div>{this.state.result}</div>
+        <div className="buttonDiv">
+          <RaisedButton
+            label="Primary"
+            primary={true}
+            onClick={this.getResult}
+          />
+        </div>
+        <div className="resultDiv">
+          <h1>{this.state.result}</h1>
+        </div>
       </div>
     );
   }

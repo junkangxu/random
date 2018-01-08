@@ -3,9 +3,7 @@ import RaisedButton from 'material-ui/RaisedButton';
 import { RadioButton, RadioButtonGroup } from 'material-ui/RadioButton';
 import { getRandomCharacter } from '../utils/generateRandom';
 
-const style = {
-  margin: 12
-};
+import './ContentCharacter.css';
 
 const styles = {
   block: {
@@ -40,35 +38,38 @@ export default class ContentCharacter extends React.Component {
   render() {
     return (
       <div>
-        <RadioButtonGroup
-          name="shipSpeed"
-          defaultSelected="Both"
-          onChange={this.handleRadioChange}
-        >
-          <RadioButton
-            value="onlyLower"
-            label="lower characters only"
-            style={styles.radioButton}
+        <div className="radioDiv">
+          <RadioButtonGroup
+            name="shipSpeed"
+            defaultSelected="Both"
+            onChange={this.handleRadioChange}
+          >
+            <RadioButton
+              value="onlyLower"
+              label="lower characters only"
+              style={styles.radioButton}
+            />
+            <RadioButton
+              value="onlyUpper"
+              label="upper characters only"
+              style={styles.radioButton}
+            />
+            <RadioButton
+              value="Both"
+              label="Both upper and lower"
+              style={styles.radioButton}
+            />
+          </RadioButtonGroup>
+        </div>
+        <div className="buttonDiv">
+          <RaisedButton
+            label="Primary"
+            primary={true}
+            onClick={this.getRandomCharacter}
           />
-          <RadioButton
-            value="onlyUpper"
-            label="upper characters only"
-            style={styles.radioButton}
-          />
-          <RadioButton
-            value="Both"
-            label="Both upper and lower characters"
-            style={styles.radioButton}
-          />
-        </RadioButtonGroup>
-        <RaisedButton
-          label="Primary"
-          primary={true}
-          style={style}
-          onClick={this.getRandomCharacter}
-        />
-        <div>
-          {this.state.result}
+        </div>
+        <div className="resultDiv">
+          <h1>{this.state.result}</h1>
         </div>
       </div>
     );

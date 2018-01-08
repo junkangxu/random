@@ -1,0 +1,26 @@
+.inputDiv {
+  width: 230px;
+  margin: 0 auto;
+}
+
+.listDiv {
+  width: 300px;
+  margin: 50px auto;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.radioDiv {
+  width: 200px;
+  margin: 0 auto;
+}
+
+.buttonDiv {
+  margin-top: 12px;
+  text-align: center;
+}
+
+.resultDiv {
+  margin-top: 12px;
+  text-align: center;
+}

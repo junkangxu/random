@@ -4,9 +4,7 @@ import SelectField from 'material-ui/SelectField';
 import MenuItem from 'material-ui/MenuItem';
 import getRandomInt from '../utils/generateRandom';
 
-const style = {
-  margin: 12
-};
+import './ContentHandFrontBack.css';
 
 const items = [
   <MenuItem key={1} value={1} primaryText="1" />,
@@ -55,7 +53,7 @@ export default class ContentHandFrontBack extends React.Component {
   render() {
     return (
       <div>
-        <div>
+        <div className="selectDiv">
           <SelectField
             value={this.state.numOfPeople}
             onChange={this.handleChange}
@@ -64,14 +62,16 @@ export default class ContentHandFrontBack extends React.Component {
             {items}
           </SelectField>
         </div>
-        <RaisedButton
-          label="Primary"
-          primary={true}
-          style={style}
-          onClick={this.getRandomHand}
-        />
-        <div>{this.state.numOfPeople}</div>
-        <div>{this.showResult()}</div>
+        <div className="buttonDiv">
+          <RaisedButton
+            label="Primary"
+            primary={true}
+            onClick={this.getRandomHand}
+          />
+        </div>
+        <div className="resultDiv">
+          <h1>{this.showResult()}</h1>
+        </div>
       </div>
     );
   }

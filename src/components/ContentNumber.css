@@ -1,0 +1,14 @@
+.inputDiv {
+  width: 270px;
+  margin: 0 auto;
+}
+
+.buttonDiv {
+  margin-top: 12px;
+  text-align: center;
+}
+
+.resultDiv {
+  margin-top: 12px;
+  text-align: center;
+}

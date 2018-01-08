@@ -2,9 +2,7 @@ import React from 'react';
 import RaisedButton from 'material-ui/RaisedButton';
 import { getRandomMahjong } from '../utils/generateRandom';
 
-const style = {
-  margin: 12
-};
+import './ContentMahjong.css';
 
 export default class ContentMahjong extends React.Component {
 
@@ -23,15 +21,16 @@ export default class ContentMahjong extends React.Component {
   render() {
     return (
       <div>
-        <div>
+        <div className="buttonDiv">
           <RaisedButton
             label="Primary"
             primary={true}
-            style={style}
             onClick={this.getResult}
           />
         </div>
-        <div>{this.state.result}</div>
+        <div className="resultDiv">
+          <h1>{this.state.result}</h1>
+        </div>
       </div>
     );
   }

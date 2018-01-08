@@ -3,6 +3,8 @@ import RaisedButton from 'material-ui/RaisedButton';
 import { RadioButton, RadioButtonGroup } from 'material-ui/RadioButton';
 import getRandomInt from '../utils/generateRandom';
 
+import './ContentDice.css';
+
 const style = {
   margin: 12
 };
@@ -63,30 +65,34 @@ export default class ContentDice extends React.Component {
   render() {
     return (
       <div>
-        <RadioButtonGroup
-          name="shipSpeed"
-          defaultSelected="one"
-          onChange={this.handleRadioChange}
-        >
-          <RadioButton
-            value="one"
-            label="one dice"
-            style={styles.radioButton}
+        <div className="radioDiv">
+          <RadioButtonGroup
+            name="shipSpeed"
+            defaultSelected="one"
+            onChange={this.handleRadioChange}
+          >
+            <RadioButton
+              value="one"
+              label="one dice"
+              style={styles.radioButton}
+            />
+            <RadioButton
+              value="two"
+              label="two dices"
+              style={styles.radioButton}
+            />
+          </RadioButtonGroup>
+        </div>
+        <div className="buttonDiv">
+          <RaisedButton
+            label="Primary"
+            primary={true}
+            style={style}
+            onClick={this.getRandomDice}
           />
-          <RadioButton
-            value="two"
-            label="two dices"
-            style={styles.radioButton}
-          />
-        </RadioButtonGroup>
-        <RaisedButton
-          label="Primary"
-          primary={true}
-          style={style}
-          onClick={this.getRandomDice}
-        />
-        <div>
-          {this.showResult()}
+        </div>
+        <div className="resultDiv">
+          <h1>{this.showResult()}</h1>
         </div>
       </div>
     );

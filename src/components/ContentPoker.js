@@ -2,9 +2,7 @@ import React from 'react';
 import RaisedButton from 'material-ui/RaisedButton';
 import getRandomInt from '../utils/generateRandom';
 
-const style = {
-  margin: 12
-};
+import './ContentPoker.css';
 
 export default class ContentPoker extends React.Component {
 
@@ -64,13 +62,16 @@ export default class ContentPoker extends React.Component {
   render() {
     return (
       <div>
-        <RaisedButton
-          label="Primary"
-          primary={true}
-          style={style}
-          onClick={this.getResult}
-        />
-        <div>{this.state.resultHead + "  "}{this.state.resultBody}</div>
+        <div className="buttonDiv">
+          <RaisedButton
+            label="Primary"
+            primary={true}
+            onClick={this.getResult}
+          />
+        </div>
+        <div className="resultDiv">
+          <h1>{this.state.resultHead + "  "}{this.state.resultBody}</h1>
+        </div>
       </div>
     );
   }

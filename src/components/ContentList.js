@@ -5,9 +5,7 @@ import { RadioButton, RadioButtonGroup } from 'material-ui/RadioButton';
 import RaisedButton from 'material-ui/RaisedButton';
 import getRandomInt, { shuffle } from '../utils/generateRandom';
 
-const style = {
-  margin: 12
-};
+import './ContentList.css';
 
 const styles = {
   block: {
@@ -111,48 +109,51 @@ export default class ChipExampleArray extends React.Component {
   render() {
     return (
       <div>
-        <div>
+        <div className="inputDiv">
           <TextField
             hintText="Hint Text"
             floatingLabelText="Floating Label Text"
             onChange={this.handleInputChange}
           />
+        </div>
+        <div className="buttonDiv">
           <RaisedButton
             label="Primary"
             primary={true}
-            style={style}
             onClick={this.addToList}
           />
-          {this.state.input}
         </div>
-        <div style={this.styles.wrapper}>
+        <div className="listDiv">
           {this.state.chipData.map(this.renderChip, this)}
         </div>
-        <div>
-        <RadioButtonGroup
-          name="shipSpeed"
-          defaultSelected="shuffle"
-          onChange={this.handleRadioChange}
-        >
-          <RadioButton
-            value="shuffle"
-            label="Shuffle the list"
-            style={styles.radioButton}
-          />
-          <RadioButton
-            value="pick"
-            label="Pick one from the list"
-            style={styles.radioButton}
-          />
-        </RadioButtonGroup>
-        <RaisedButton
-          label="Primary"
-          primary={true}
-          style={style}
-          onClick={this.getResult}
-        />
+        <div className="radioDiv">
+          <RadioButtonGroup
+            name="shipSpeed"
+            defaultSelected="shuffle"
+            onChange={this.handleRadioChange}
+          >
+            <RadioButton
+              value="shuffle"
+              label="Shuffle the list"
+              style={styles.radioButton}
+            />
+            <RadioButton
+              value="pick"
+              label="Pick one from the list"
+              style={styles.radioButton}
+            />
+          </RadioButtonGroup>
         </div>
-        <div>{this.state.result}</div>
+        <div className="buttonDiv">
+          <RaisedButton
+            label="Primary"
+            primary={true}
+            onClick={this.getResult}
+          />
+        </div>
+        <div className="resultDiv">
+          <h1>{this.state.result}</h1>
+        </div>
       </div>
     );
   }

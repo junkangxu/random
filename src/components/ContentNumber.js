@@ -3,9 +3,7 @@ import TextField from 'material-ui/TextField';
 import RaisedButton from 'material-ui/RaisedButton';
 import getRandomInt from '../utils/generateRandom';
 
-const style = {
-  margin: 12
-};
+import './ContentNumber.css';
 
 export default class ContentNumber extends React.Component {
 
@@ -35,31 +33,38 @@ export default class ContentNumber extends React.Component {
     if (this.state.min != null && this.state.max != null
         && this.state.min <= this.state.max) {
       let newResult = getRandomInt(this.state.min, this.state.max);
-      this.setState({result: newResult});    
+      this.setState({result: newResult});
     }
 
   }
 
   render() {
     return (
-      <div>
-        <TextField
-          hintText="minValueField"
-          floatingLabelText="minValue"
-          onChange={this.changeMinValue}
-        />
-        <TextField
-          hintText="maxValueField"
-          floatingLabelText="maxValue"
-          onChange={this.changeMaxValue}
-        />
-        <RaisedButton
-          label="Primary"
-          primary={true}
-          style={style}
-          onClick={this.getResult}
-        />
-        <div>{this.state.result}</div>
+      <div className="contentDiv">
+        <div className="inputDiv">
+          <TextField
+            hintText="minValueField"
+            floatingLabelText="minValue"
+            onChange={this.changeMinValue}
+          />
+          <TextField
+            hintText="maxValueField"
+            floatingLabelText="maxValue"
+            onChange={this.changeMaxValue}
+          />
+        </div>
+        <div className="buttonDiv">
+          <RaisedButton
+            label="Primary"
+            primary={true}
+            onClick={this.getResult}
+          />
+        </div>
+        <div className="resultDiv">
+          <h1>
+            {this.state.result}
+          </h1>
+        </div>
       </div>
     );
   }
