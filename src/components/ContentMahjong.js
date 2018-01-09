@@ -1,9 +1,13 @@
 import React from 'react';
 import RaisedButton from 'material-ui/RaisedButton';
-import { getRandomMahjong } from '../utils/generateRandom';
 import Divider from 'material-ui/Divider';
 
+import { addToLocalStorage } from '../utils/localStorage';
+import { getRandomMahjong } from '../utils/generateRandom';
+
 import './ContentMahjong.css';
+
+const type = "Mahjong";
 
 export default class ContentMahjong extends React.Component {
 
@@ -17,6 +21,7 @@ export default class ContentMahjong extends React.Component {
   getResult = () => {
     let randomMahjong = getRandomMahjong();
     this.setState({result: randomMahjong});
+    addToLocalStorage(type, randomMahjong);
   }
 
   render() {

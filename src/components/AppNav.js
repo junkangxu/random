@@ -18,6 +18,7 @@ import ContentList from './ContentList';
 import ContentMahjong from './ContentMahjong';
 import ContentTime from './ContentTime';
 import ContentDate from './ContentDate';
+import ContentHistory from './ContentHistory';
 
 import './AppNav.css';
 
@@ -84,6 +85,8 @@ export default class AppNav extends React.Component {
         return <ContentTime />;
       case 13:
         return <ContentDate />;
+      case 14:
+        return <ContentHistory />;
       default:
         return <HomePage />;
     }

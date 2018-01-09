@@ -1,0 +1,10 @@
+.contentDiv {
+  width: 500px;
+  margin: 0 auto;
+}
+
+.superhead {
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 24px;
+}
