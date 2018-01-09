@@ -23,8 +23,8 @@ A set of tools using randomizations to help you make decisions
     - [x] Pick from (1/7)
   - [x] Scissor, Paper, Rock (1/7)
   - [x] Hand Front and Back (1/7)
-  - [ ] Time
-  - [ ] Date
+  - [x] Time (1/9)
+  - [x] Date (1/9)
   - [x] Home Page (1/8)
 - [ ] Style
   - [x] Number (1/8)
@@ -38,3 +38,6 @@ A set of tools using randomizations to help you make decisions
   - [x] List (1/8)
   - [x] Scissor, Paper, Rock (1/8)
   - [x] Hand Front and Back (1/8)
+  - [x] Time (1/9)
+  - [x] Date (1/9)
+  - [x] Home Page (1/9)

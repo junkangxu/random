@@ -2,8 +2,8 @@ import React from 'react';
 import RaisedButton from 'material-ui/RaisedButton';
 import SelectField from 'material-ui/SelectField';
 import MenuItem from 'material-ui/MenuItem';
-import getRandomInt from '../utils/generateRandom';
 import Divider from 'material-ui/Divider';
+import getRandomInt from '../utils/generateRandom';
 
 import './ContentHandFrontBack.css';
 

@@ -3,8 +3,8 @@ import AppBar from 'material-ui/AppBar';
 import Drawer from 'material-ui/Drawer';
 import MenuItem from 'material-ui/MenuItem';
 import FlatButton from 'material-ui/FlatButton';
-import IconButton from 'material-ui/IconButton';
-import NavigationClose from 'material-ui/svg-icons/navigation/close';
+import Divider from 'material-ui/Divider';
+
 import HomePage from './HomePage';
 import ContentNumber from './ContentNumber';
 import ContentCharacter from './ContentCharacter';
@@ -16,16 +16,19 @@ import ContentSPR from './ContentSPR';
 import ContentHandFrontBack from './ContentHandFrontBack';
 import ContentList from './ContentList';
 import ContentMahjong from './ContentMahjong';
-// import Test from './test';
-// import FlatButtonExampleSimple from './test';
+import ContentTime from './ContentTime';
+import ContentDate from './ContentDate';
+
 import './AppNav.css';
+
+const GitHubUrl = "https://github.com/junkangxu/random";
 
 class Login extends React.Component {
   static muiName = 'FlatButton';
 
   render() {
     return (
-      <FlatButton {...this.props} label="History" />
+      <FlatButton {...this.props} label="GitHub" />
     );
   }
 }
@@ -45,11 +48,11 @@ export default class AppNav extends React.Component {
 
   handleClose = () => this.setState({open: false});
 
+  handleGitHubClick = () => window.location.href = GitHubUrl;
+
   handleHistoryToggle = () => this.setState({historyOpen: !this.state.historyOpen});
 
   handleHistoryClose = () => this.setState({historyOpen: false});
-
-  handleTitleClick = () => this.setState({type: 0});
 
   handleClick(e) {
     this.setState({open: false, type: e});
@@ -77,6 +80,10 @@ export default class AppNav extends React.Component {
         return <ContentSPR />;
       case 11:
         return <ContentHandFrontBack />;
+      case 12:
+        return <ContentTime />;
+      case 13:
+        return <ContentDate />;
       default:
         return <HomePage />;
     }
@@ -88,9 +95,8 @@ export default class AppNav extends React.Component {
         <AppBar
           title="Random"
           iconElementRight={<Login />}
-          onTitleClick={this.handleTitleClick}
           onLeftIconButtonClick={this.handleToggle}
-          onRightIconButtonClick={this.handleHistoryToggle}
+          onRightIconButtonClick={this.handleGitHubClick}
         />
         <Drawer
           docked={false}
@@ -98,32 +104,27 @@ export default class AppNav extends React.Component {
           open={this.state.open}
           onRequestChange={(open) => this.setState({open})}
         >
-          <MenuItem onClick={this.handleClick.bind(this, 1)}>数字</MenuItem>
-          <MenuItem onClick={this.handleClick.bind(this, 2)}>英文字母</MenuItem>
-          <MenuItem onClick={this.handleClick.bind(this, 3)}>骰子</MenuItem>
-          <MenuItem onClick={this.handleClick.bind(this, 4)}>是否</MenuItem>
-          <MenuItem onClick={this.handleClick.bind(this, 5)}>硬币</MenuItem>
+          <MenuItem onClick={this.handleClick.bind(this, 0)} checked={this.state.type === 0}>主页</MenuItem>
+          <br />
+          <Divider />
+          <br />
+          <MenuItem onClick={this.handleClick.bind(this, 1)} checked={this.state.type === 1}>数字</MenuItem>
+          <MenuItem onClick={this.handleClick.bind(this, 2)} checked={this.state.type === 2}>英文字母</MenuItem>
+          <MenuItem onClick={this.handleClick.bind(this, 3)} checked={this.state.type === 3}>骰子</MenuItem>
+          <MenuItem onClick={this.handleClick.bind(this, 4)} checked={this.state.type === 4}>是否</MenuItem>
+          <MenuItem onClick={this.handleClick.bind(this, 5)} checked={this.state.type === 5}>硬币</MenuItem>
           <MenuItem onClick={this.handleClose}>地图</MenuItem>
-          <MenuItem onClick={this.handleClick.bind(this, 7)}>扑克牌</MenuItem>
-          <MenuItem onClick={this.handleClick.bind(this, 8)}>麻将</MenuItem>
-          <MenuItem onClick={this.handleClick.bind(this, 9)}>列表</MenuItem>
-          <MenuItem onClick={this.handleClick.bind(this, 10)}>剪刀石头布</MenuItem>
-          <MenuItem onClick={this.handleClick.bind(this, 11)}>手心手背</MenuItem>
-          <MenuItem onClick={this.handleClick.bind(this, 12)}>时间</MenuItem>
-          <MenuItem onClick={this.handleClick.bind(this, 13)}>日期</MenuItem>
-        </Drawer>
-        <Drawer
-          docked={false}
-          width={200}
-          openSecondary={true}
-          open={this.state.historyOpen}
-          onRequestChange={(historyOpen) => this.setState({historyOpen})}
-        >
-          <AppBar
-            title="AppBar"
-            iconElementLeft={<IconButton><NavigationClose /></IconButton>}
-            onLeftIconButtonClick={this.handleHistoryClose}
-          />
+          <MenuItem onClick={this.handleClick.bind(this, 7)} checked={this.state.type === 7}>扑克牌</MenuItem>
+          <MenuItem onClick={this.handleClick.bind(this, 8)} checked={this.state.type === 8}>麻将</MenuItem>
+          <MenuItem onClick={this.handleClick.bind(this, 9)} checked={this.state.type === 9}>列表</MenuItem>
+          <MenuItem onClick={this.handleClick.bind(this, 10)} checked={this.state.type === 10}>剪刀石头布</MenuItem>
+          <MenuItem onClick={this.handleClick.bind(this, 11)} checked={this.state.type === 11}>手心手背</MenuItem>
+          <MenuItem onClick={this.handleClick.bind(this, 12)} checked={this.state.type === 12}>时间</MenuItem>
+          <MenuItem onClick={this.handleClick.bind(this, 13)} checked={this.state.type === 13}>日期</MenuItem>
+          <br />
+          <Divider />
+          <br />
+          <MenuItem onClick={this.handleClick.bind(this, 14)}>历史</MenuItem>
         </Drawer>
         <div className="content">
           {this.getContent()}

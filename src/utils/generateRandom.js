@@ -10,8 +10,85 @@ const mahjongList = wanList.concat(tongList).concat(tiaoList);
 const chineseNumberCoverter = ['有问题', '一', '二', '三', '四', '五', '六', '七', '八', '九'];
 const chineseOtherConverter = ['有问题', '东风', '南风', '西风', '北风', '红中', '白板', '发财'];
 
-function getRandomCharacterHelper(str) {
-  return str.charAt(Math.floor(Math.random() * str.length));
+const dayOfMonthNormal = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+const dayOfMonthLeap = [31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+
+function isLeapYear(year) {
+  let divisibleBy4 = year % 4 === 0;
+  let notDivisibleBy100 = year % 100 !== 0;
+  if (divisibleBy4 && notDivisibleBy100) {
+    return true;
+  } else {
+    return false;
+  }
+}
+
+function timeToString(num) {
+  if (num < 10) {
+    return "0" + num.toString();
+  } else {
+    return num.toString();
+  }
+}
+
+export function getRandomDate(startDate, endDate) {
+  let millsecDiff = endDate - startDate;
+  if (millsecDiff < 0) {
+    return "";
+  }
+  let secDiff = millsecDiff / 1000;
+  let minDiff = secDiff / 60;
+  let hourDiff = minDiff / 60;
+  let dayDiff = hourDiff / 24;
+  let resultYear = startDate.getFullYear();
+  let resultDay = startDate.getDate();
+  let resultMonth = startDate.getMonth();
+  let randomInt = getRandomInt(0, dayDiff);
+  let dayOfMonth;
+  if (isLeapYear(resultYear)) {
+    dayOfMonth = dayOfMonthLeap;
+  } else {
+    dayOfMonth = dayOfMonthNormal;
+  }
+  resultDay += randomInt;
+  while (resultDay > dayOfMonth[resultMonth]) {
+    resultDay -= dayOfMonth[resultMonth];
+    resultMonth += 1;
+  }
+  resultMonth++;
+  return resultYear + "-" + timeToString(resultMonth) + "-"
+    + timeToString(resultDay);
+}
+
+export function getRandomTime(startTime, endTime) {
+  let millsecDiff = endTime - startTime;
+  if (millsecDiff < 0) {
+    return "";
+  }
+  let secDiff = millsecDiff / 1000;
+  let minDiff = secDiff / 60;
+  let randomInt = getRandomInt(0, minDiff);
+  console.log(randomInt);
+  let startTimeMin = startTime.getMinutes();
+  let startTimeHour = startTime.getHours();
+  let resultMin = startTimeMin;
+  let resultHour = startTimeHour;
+  while (randomInt >= 60) {
+    resultHour += 1;
+    randomInt -= 60;
+  }
+
+  resultMin += randomInt
+
+  while (resultMin >= 60) {
+    resultHour += 1;
+    resultMin -= 60;
+  }
+
+  resultMin = timeToString(resultMin);
+  resultHour = timeToString(resultHour);
+
+  return resultHour + ":" + resultMin;
 }
 
 export function getRandomMahjong() {
@@ -42,6 +119,10 @@ export function shuffle(a) {
         [a[i], a[j]] = [a[j], a[i]];
     }
     return a;
+}
+
+function getRandomCharacterHelper(str) {
+  return str.charAt(Math.floor(Math.random() * str.length));
 }
 
 export function getRandomCharacter(type) {
