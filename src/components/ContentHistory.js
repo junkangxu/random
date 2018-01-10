@@ -1,17 +1,21 @@
 import React from 'react';
 import { Table, TableBody, TableHeader, TableHeaderColumn, TableRow, TableRowColumn} from 'material-ui/Table';
-import RaisedButton from 'material-ui/RaisedButton';
+
+import SimpleModal from './Modals/SimpleModal';
 
 import getLocalStorage, { removeLocalStorage } from '../utils/localStorage';
-
 import localStorageName from '../utils/common';
 
 import './ContentHistory.css';
+
+const dialogContent = "Are you sure you want to clear the history ?";
+const dialogTitle = "Clear History";
 
 export default class ContentHistory extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      dialogOpen: false,
       height: "1200px",
       tableData: []
     };
@@ -37,15 +41,11 @@ export default class ContentHistory extends React.Component {
   render() {
     return (
       <div>
-        <div className="buttonDiv">
-          <RaisedButton
-            className="button"
-            label="CLEAR"
-            secondary={true}
-            fullWidth={true}
-            onClick={this.handleClear}
-          />
-        </div>
+        <SimpleModal
+          title={dialogTitle}
+          content={dialogContent}
+          confirmFunc={this.handleClear}
+        />
         <div className="contentDiv">
           <Table
             height={this.state.height}
