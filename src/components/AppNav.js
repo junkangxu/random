@@ -127,7 +127,7 @@ export default class AppNav extends React.Component {
           <br />
           <Divider />
           <br />
-          <MenuItem onClick={this.handleClick.bind(this, 14)}>历史</MenuItem>
+          <MenuItem onClick={this.handleClick.bind(this, 14)} checked={this.state.type === 14}>历史</MenuItem>
         </Drawer>
         <div className="content">
           {this.getContent()}

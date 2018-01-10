@@ -3,7 +3,9 @@ import Chip from 'material-ui/Chip';
 import TextField from 'material-ui/TextField';
 import { RadioButton, RadioButtonGroup } from 'material-ui/RadioButton';
 import RaisedButton from 'material-ui/RaisedButton';
+
 import getRandomInt, { shuffle } from '../utils/generateRandom';
+import { addToLocalStorage } from '../utils/localStorage';
 
 import './ContentList.css';
 
@@ -16,6 +18,8 @@ const styles = {
     marginBottom: 16,
   },
 };
+
+const type = "List";
 
 export default class ChipExampleArray extends React.Component {
 
@@ -86,11 +90,13 @@ export default class ChipExampleArray extends React.Component {
         retVal += "   ";
       }
       this.setState({result: retVal});
+      addToLocalStorage(type, retVal);
     } else {
       let maxNum = this.chipData.length - 1;
       let randomInt = getRandomInt(0, maxNum);
       let retVal = this.chipData[randomInt].label;
       this.setState({result: retVal});
+      addToLocalStorage(type, retVal);
     }
   };
 

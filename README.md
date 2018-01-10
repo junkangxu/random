@@ -26,7 +26,7 @@ A set of tools using randomizations to help you make decisions
   - [x] Time (1/9)
   - [x] Date (1/9)
   - [x] Home Page (1/8)
-  - [ ] History
+  - [x] History (1/10)
 - [ ] Style
   - [x] Number (1/8)
   - [x] Characters (1/8)
@@ -42,4 +42,16 @@ A set of tools using randomizations to help you make decisions
   - [x] Time (1/9)
   - [x] Date (1/9)
   - [x] Home Page (1/9)
-  - [ ] History
+  - [x] History (1/10)
+- [x] Local Storage (1/10)
+- [ ] Pictures
+  - [ ] Dice
+  - [ ] Coin
+  - [ ] Poker
+  - [ ] Mahjong
+  - [ ] Scissor, Paper, Rock
+  - [ ] Hand Front and Back
+- [ ] Third Party API
+  - [ ] Map API
+- [ ] Build
+- [ ] Deploy

@@ -1,10 +1,14 @@
 import React from 'react';
 import RaisedButton from 'material-ui/RaisedButton';
 import { RadioButton, RadioButtonGroup } from 'material-ui/RadioButton';
-import getRandomInt from '../utils/generateRandom';
 import Divider from 'material-ui/Divider';
 
+import getRandomInt from '../utils/generateRandom';
+import { addToLocalStorage } from '../utils/localStorage';
+
 import './ContentDice.css';
+
+const type = "Dice";
 
 export default class ContentDice extends React.Component {
 
@@ -46,6 +50,9 @@ export default class ContentDice extends React.Component {
     for (let i = 0; i < result.length; i++) {
       retVal += result[i];
       retVal += " ";
+    }
+    if (retVal !== "") {
+      addToLocalStorage(type, retVal);
     }
     return retVal;
   }

@@ -1,25 +1,51 @@
 import React from 'react';
 import { Table, TableBody, TableHeader, TableHeaderColumn, TableRow, TableRowColumn} from 'material-ui/Table';
+import RaisedButton from 'material-ui/RaisedButton';
 
-import getLocalStorage from '../utils/localStorage';
+import getLocalStorage, { removeLocalStorage } from '../utils/localStorage';
 
 import localStorageName from '../utils/common';
 
 import './ContentHistory.css';
 
-let tableData = JSON.parse(getLocalStorage(localStorageName));
-
 export default class ContentHistory extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      height: "1000px"
+      height: "1200px",
+      tableData: []
     };
   }
+
+  componentDidMount = () => {
+    this.reloadLocalStorage();
+  };
+
+  reloadLocalStorage = () => {
+    let newTableData = JSON.parse(getLocalStorage(localStorageName));
+    if (newTableData === null) {
+      newTableData = [];
+    }
+    this.setState({tableData: newTableData});
+  }
+
+  handleClear = () => {
+    removeLocalStorage(localStorageName);
+    this.reloadLocalStorage();
+  };
 
   render() {
     return (
       <div>
+        <div className="buttonDiv">
+          <RaisedButton
+            className="button"
+            label="CLEAR"
+            secondary={true}
+            fullWidth={true}
+            onClick={this.handleClear}
+          />
+        </div>
         <div className="contentDiv">
           <Table
             height={this.state.height}
@@ -49,7 +75,7 @@ export default class ContentHistory extends React.Component {
               showRowHover={true}
               stripedRows={true}
             >
-              {tableData.map((row, index) => (
+              {this.state.tableData.map((row, index) => (
                 <TableRow key={index}>
                   <TableRowColumn>{row.type}</TableRowColumn>
                   <TableRowColumn>{row.value}</TableRowColumn>

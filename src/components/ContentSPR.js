@@ -1,9 +1,13 @@
 import React from 'react';
 import RaisedButton from 'material-ui/RaisedButton';
-import getRandomInt from '../utils/generateRandom';
 import Divider from 'material-ui/Divider';
 
+import getRandomInt from '../utils/generateRandom';
+import { addToLocalStorage } from '../utils/localStorage';
+
 import './ContentSPR.css';
+
+const type = "Paper Scissor Rock";
 
 export default class ContentSPR extends React.Component {
 
@@ -32,6 +36,7 @@ export default class ContentSPR extends React.Component {
         newResult = "";
     }
     this.setState({result: newResult});
+    addToLocalStorage(type, newResult);
   }
 
   render() {

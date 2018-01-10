@@ -3,7 +3,9 @@ import RaisedButton from 'material-ui/RaisedButton';
 import SelectField from 'material-ui/SelectField';
 import MenuItem from 'material-ui/MenuItem';
 import Divider from 'material-ui/Divider';
+
 import getRandomInt from '../utils/generateRandom';
+import { addToLocalStorage } from '../utils/localStorage';
 
 import './ContentHandFrontBack.css';
 
@@ -15,7 +17,9 @@ const items = [
   <MenuItem key={5} value={5} primaryText="5" />,
 ];
 
-const hands = ["手心", "手背"];
+const hands = ["心", "背"];
+
+const type = "HandFrontBack";
 
 export default class ContentHandFrontBack extends React.Component {
 
@@ -47,6 +51,9 @@ export default class ContentHandFrontBack extends React.Component {
     for (let i = 0; i < result.length; i++) {
       retVal += hands[result[i] - 1];
       retVal += " ";
+    }
+    if (retVal !== "") {
+      addToLocalStorage(type, retVal);
     }
     return retVal;
   }

@@ -2,9 +2,13 @@ import React from 'react';
 import DatePicker from 'material-ui/DatePicker';
 import RaisedButton from 'material-ui/RaisedButton';
 import Divider from 'material-ui/Divider';
+
 import { getRandomDate } from '../utils/generateRandom';
+import { addToLocalStorage } from '../utils/localStorage';
 
 import './ContentDate.css';
+
+const type = "Date";
 
 export default class ContentDate extends React.Component {
 
@@ -30,6 +34,7 @@ export default class ContentDate extends React.Component {
     let endDate = this.state.endDate;
     let newResult = getRandomDate(beginDate, endDate);
     this.setState({result: newResult});
+    addToLocalStorage(type, newResult);
   };
 
   render() {

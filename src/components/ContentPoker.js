@@ -1,9 +1,13 @@
 import React from 'react';
 import RaisedButton from 'material-ui/RaisedButton';
-import getRandomInt from '../utils/generateRandom';
 import Divider from 'material-ui/Divider';
 
+import getRandomInt from '../utils/generateRandom';
+import { addToLocalStorage } from '../utils/localStorage';
+
 import './ContentPoker.css';
+
+const type = "Poker";
 
 export default class ContentPoker extends React.Component {
 
@@ -38,6 +42,7 @@ export default class ContentPoker extends React.Component {
         newResultHead = "";
     }
     this.setState({resultHead: newResultHead});
+    return newResultHead;
   }
 
   getResultBody() {
@@ -53,11 +58,13 @@ export default class ContentPoker extends React.Component {
       newResultBody = "K";
     }
     this.setState({resultBody: newResultBody});
+    return newResultBody;
   }
 
   getResult(event) {
-    this.getResultHead();
-    this.getResultBody();
+    let head = this.getResultHead();
+    let body = this.getResultBody();
+    addToLocalStorage(type, head + " " + body);
   }
 
   render() {

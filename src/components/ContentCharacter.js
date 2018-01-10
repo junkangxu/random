@@ -1,8 +1,10 @@
 import React from 'react';
 import RaisedButton from 'material-ui/RaisedButton';
 import { RadioButton, RadioButtonGroup } from 'material-ui/RadioButton';
-import { getRandomCharacter } from '../utils/generateRandom';
 import Divider from 'material-ui/Divider';
+
+import { getRandomCharacter } from '../utils/generateRandom';
+import { addToLocalStorage } from '../utils/localStorage';
 
 import './ContentCharacter.css';
 
@@ -14,6 +16,8 @@ const styles = {
     marginBottom: 16,
   },
 };
+
+const type = "Character";
 
 export default class ContentCharacter extends React.Component {
 
@@ -34,6 +38,7 @@ export default class ContentCharacter extends React.Component {
   getRandomCharacter() {
     let newResult = getRandomCharacter(this.state.type);
     this.setState({result: newResult});
+    addToLocalStorage(type, newResult);
   }
 
   render() {

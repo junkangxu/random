@@ -1,10 +1,14 @@
 import React from 'react';
 import TextField from 'material-ui/TextField';
 import RaisedButton from 'material-ui/RaisedButton';
-import getRandomInt from '../utils/generateRandom';
 import Divider from 'material-ui/Divider';
 
+import getRandomInt from '../utils/generateRandom';
+import { addToLocalStorage } from '../utils/localStorage';
+
 import './ContentNumber.css';
+
+const type = "Number";
 
 export default class ContentNumber extends React.Component {
 
@@ -35,6 +39,7 @@ export default class ContentNumber extends React.Component {
         && this.state.min <= this.state.max) {
       let newResult = getRandomInt(this.state.min, this.state.max);
       this.setState({result: newResult});
+      addToLocalStorage(type, newResult);
     }
 
   }
