@@ -1,7 +1,6 @@
 import React from 'react';
 import RaisedButton from 'material-ui/RaisedButton';
 import Divider from 'material-ui/Divider';
-
 import getRandomInt from '../utils/generateRandom';
 import { addToLocalStorage } from '../utils/localStorage';
 
@@ -13,16 +12,13 @@ export default class ContentPoker extends React.Component {
 
   constructor(props) {
     super(props);
-    this.getResultHead = this.getResultHead.bind(this);
-    this.getResultBody = this.getResultBody.bind(this);
-    this.getResult = this.getResult.bind(this);
     this.state = {
       resultHead: "",
       resultBody: ""
     };
   }
 
-  getResultHead() {
+  getResultHead = () => {
     let randomInt = getRandomInt(1, 4);
     let newResultHead;
     switch (randomInt) {
@@ -45,7 +41,7 @@ export default class ContentPoker extends React.Component {
     return newResultHead;
   }
 
-  getResultBody() {
+  getResultBody = () => {
     let randomInt = getRandomInt(1, 13);
     let newResultBody;
     if (randomInt <= 10) {
@@ -61,7 +57,7 @@ export default class ContentPoker extends React.Component {
     return newResultBody;
   }
 
-  getResult(event) {
+  getResult = (event) => {
     let head = this.getResultHead();
     let body = this.getResultBody();
     addToLocalStorage(type, head + " " + body);

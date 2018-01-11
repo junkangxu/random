@@ -4,7 +4,6 @@ import Drawer from 'material-ui/Drawer';
 import MenuItem from 'material-ui/MenuItem';
 import FlatButton from 'material-ui/FlatButton';
 import Divider from 'material-ui/Divider';
-
 import HomePage from './HomePage';
 import ContentNumber from './ContentNumber';
 import ContentCharacter from './ContentCharacter';
@@ -55,9 +54,7 @@ export default class AppNav extends React.Component {
 
   handleHistoryClose = () => this.setState({historyOpen: false});
 
-  handleClick(e) {
-    this.setState({open: false, type: e});
-  }
+  handleClick = (e) => this.setState({open: false, type: e});
 
   getContent() {
     switch (this.state.type) {

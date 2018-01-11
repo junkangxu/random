@@ -2,7 +2,6 @@ import React from 'react';
 import TimePicker from 'material-ui/TimePicker';
 import RaisedButton from 'material-ui/RaisedButton';
 import Divider from 'material-ui/Divider';
-
 import { getRandomTime } from '../utils/generateRandom';
 import { addToLocalStorage } from '../utils/localStorage';
 
@@ -24,7 +23,6 @@ export default class ContentTime extends React.Component {
   handleChangeLowerTimePicker = (event, time) => this.setState({lowerResult: time});
 
   handleChangeUpperTimePicker = (event, time) => this.setState({upperResult: time});
-
 
   getRandomTime = () => {
     let startTime = this.state.lowerResult;

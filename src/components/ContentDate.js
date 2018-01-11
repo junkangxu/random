@@ -2,7 +2,6 @@ import React from 'react';
 import DatePicker from 'material-ui/DatePicker';
 import RaisedButton from 'material-ui/RaisedButton';
 import Divider from 'material-ui/Divider';
-
 import { getRandomDate } from '../utils/generateRandom';
 import { addToLocalStorage } from '../utils/localStorage';
 

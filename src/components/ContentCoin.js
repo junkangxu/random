@@ -1,7 +1,6 @@
 import React from 'react';
 import RaisedButton from 'material-ui/RaisedButton';
 import Divider from 'material-ui/Divider';
-
 import getRandomInt from '../utils/generateRandom';
 import { addToLocalStorage } from '../utils/localStorage';
 
@@ -13,23 +12,21 @@ export default class ContentCoin extends React.Component {
 
   constructor(props) {
     super(props);
-    this.getResult = this.getResult.bind(this);
     this.state = {
       result: ""
     }
   }
 
-  getResult(event) {
-    let randomInt = getRandomInt(1, 2);
+  getResult = () => {
     let newResult;
-    if (randomInt === 1) {
+    if (getRandomInt(1, 2) === 1) {
       newResult = "Head";
     } else {
       newResult = "Tail";
     }
     this.setState({result: newResult});
     addToLocalStorage(type, newResult);
-  }
+  };
 
   render() {
     return (

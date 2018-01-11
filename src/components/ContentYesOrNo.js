@@ -1,7 +1,6 @@
 import React from 'react';
 import RaisedButton from 'material-ui/RaisedButton';
 import Divider from 'material-ui/Divider';
-
 import getRandomInt from '../utils/generateRandom';
 import { addToLocalStorage } from '../utils/localStorage';
 
@@ -13,13 +12,12 @@ export default class ContentYesOrNo extends React.Component {
 
   constructor(props) {
     super(props);
-    this.getResult = this.getResult.bind(this);
     this.state = {
       result: ""
     };
   }
 
-  getResult(event) {
+  getResult = (event) => {
     let randomInt = getRandomInt(1, 2);
     let newResult;
     if (randomInt === 1) {

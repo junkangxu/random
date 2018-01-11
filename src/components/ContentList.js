@@ -3,7 +3,6 @@ import Chip from 'material-ui/Chip';
 import TextField from 'material-ui/TextField';
 import { RadioButton, RadioButtonGroup } from 'material-ui/RadioButton';
 import RaisedButton from 'material-ui/RaisedButton';
-
 import getRandomInt, { shuffle } from '../utils/generateRandom';
 import { addToLocalStorage } from '../utils/localStorage';
 
@@ -27,9 +26,8 @@ export default class ChipExampleArray extends React.Component {
     super(props);
     this.state = {
       chipData: [{key: 0, label: 'Angular'},
-                 {key: 1, label: 'JQuery'},
-                 {key: 2, label: 'Polymer'},
-                 {key: 3, label: 'ReactJS'},],
+                 {key: 1, label: 'Vue'},
+                 {key: 2, label: 'ReactJS'},],
       input: "",
       type: "shuffle",
       result: ""

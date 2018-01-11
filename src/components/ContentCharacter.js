@@ -2,7 +2,6 @@ import React from 'react';
 import RaisedButton from 'material-ui/RaisedButton';
 import { RadioButton, RadioButtonGroup } from 'material-ui/RadioButton';
 import Divider from 'material-ui/Divider';
-
 import { getRandomCharacter } from '../utils/generateRandom';
 import { addToLocalStorage } from '../utils/localStorage';
 
@@ -23,23 +22,19 @@ export default class ContentCharacter extends React.Component {
 
   constructor(props) {
     super(props);
-    this.handleRadioChange = this.handleRadioChange.bind(this);
-    this.getRandomCharacter = this.getRandomCharacter.bind(this);
     this.state = {
       type: "Both",
       result: ""
     };
   }
 
-  handleRadioChange(event, value) {
-    this.setState({type: value});
-  }
+  handleRadioChange = (event, value) => this.setState({type: value});
 
-  getRandomCharacter() {
+  getRandomCharacter = () => {
     let newResult = getRandomCharacter(this.state.type);
     this.setState({result: newResult});
     addToLocalStorage(type, newResult);
-  }
+  };
 
   render() {
     return (

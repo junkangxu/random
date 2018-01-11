@@ -1,11 +1,8 @@
 import React from 'react';
 import { Table, TableBody, TableHeader, TableHeaderColumn, TableRow, TableRowColumn} from 'material-ui/Table';
-
 import SimpleModal from './Modals/SimpleModal';
-
 import getLocalStorage, { removeLocalStorage } from '../utils/localStorage';
 import localStorageName from '../utils/common';
-
 import './ContentHistory.css';
 
 const dialogContent = "Are you sure you want to clear the history ?";

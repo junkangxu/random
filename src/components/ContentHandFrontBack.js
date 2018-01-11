@@ -25,17 +25,16 @@ export default class ContentHandFrontBack extends React.Component {
 
   constructor(props) {
     super(props);
-    this.getRandomHand = this.getRandomHand.bind(this);
-    this.showResult = this.showResult.bind(this);
     this.state = {
       numOfPeople: 0,
-      result: []
+      result: [],
+      strResult: ""
     };
   }
 
   handleChange = (event, index, value) => this.setState({numOfPeople: value});
 
-  getRandomHand() {
+  getRandomHand = () => {
     let numOfPeople = this.state.numOfPeople;
     let retVal = [];
     for (let i = 0; i < numOfPeople; i++) {
@@ -43,11 +42,12 @@ export default class ContentHandFrontBack extends React.Component {
       retVal.push(randomInt);
     }
     this.setState({result: retVal});
+    this.showResult(retVal);
   }
 
-  showResult() {
+  showResult = (arr) => {
     let retVal = "";
-    let result = this.state.result;
+    let result = arr;
     for (let i = 0; i < result.length; i++) {
       retVal += hands[result[i] - 1];
       retVal += " ";
@@ -55,7 +55,7 @@ export default class ContentHandFrontBack extends React.Component {
     if (retVal !== "") {
       addToLocalStorage(type, retVal);
     }
-    return retVal;
+    this.setState({strResult: retVal});
   }
 
   render() {
@@ -82,7 +82,7 @@ export default class ContentHandFrontBack extends React.Component {
           />
         </div>
         <div className="resultDiv">
-          <h1>{this.showResult()}</h1>
+          <h1>{this.state.strResult}</h1>
         </div>
       </div>
     );

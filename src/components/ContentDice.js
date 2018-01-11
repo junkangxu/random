@@ -2,7 +2,6 @@ import React from 'react';
 import RaisedButton from 'material-ui/RaisedButton';
 import { RadioButton, RadioButtonGroup } from 'material-ui/RadioButton';
 import Divider from 'material-ui/Divider';
-
 import getRandomInt from '../utils/generateRandom';
 import { addToLocalStorage } from '../utils/localStorage';
 
@@ -14,48 +13,43 @@ export default class ContentDice extends React.Component {
 
   constructor(props) {
     super(props);
-    this.handleRadioChange = this.handleRadioChange.bind(this);
-    this.getRandomDice = this.getRandomDice.bind(this);
-    this.showResult = this.showResult.bind(this);
     this.state = {
       type: "one",
-      result: []
+      result: [],
+      strResult: ""
     };
   }
 
-  handleRadioChange(event, value) {
-    this.setState({type: value});
-  }
+  handleRadioChange = (event, value) => this.setState({type: value});
 
-  getRandomDice() {
-    let type = this.state.type;
-    if (type === "one") {
+  getRandomDice = () => {
+    if (this.state.type === "one") {
       let retVal = [];
-      let randomInt = getRandomInt(1, 6);
-      retVal.push(randomInt);
+      retVal.push(getRandomInt(1,6));
       this.setState({result: retVal});
+      this.showResult(retVal);
     } else {
       let retVal = [];
       for (let i = 0; i < 2; i++) {
-        let randomInt = getRandomInt(1, 6);
-        retVal.push(randomInt);
+        retVal.push(getRandomInt(1,6));
       }
       this.setState({result: retVal});
+      this.showResult(retVal);
     }
-  }
+  };
 
-  showResult() {
+  showResult = (arr) => {
     let retVal = "";
-    let result = this.state.result;
+    let result = arr;
     for (let i = 0; i < result.length; i++) {
       retVal += result[i];
       retVal += " ";
     }
     if (retVal !== "") {
       addToLocalStorage(type, retVal);
+      this.setState({strResult: retVal});
     }
-    return retVal;
-  }
+  };
 
   render() {
     return (
@@ -90,7 +84,7 @@ export default class ContentDice extends React.Component {
           />
         </div>
         <div className="resultDiv">
-          <h1>{this.showResult()}</h1>
+          <h1>{this.state.strResult}</h1>
         </div>
       </div>
     );
