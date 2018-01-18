@@ -12,6 +12,7 @@ A set of tools using randomizations to help you make decisions
 - [x] Local Storage (1/10)
 - [x] Rough implementation (1/18)
 - [x] Style (1/18)
+- [x] Google Map API (1/18)
 - [ ] Pictures
   - [ ] Dice
   - [ ] Coin
@@ -19,7 +20,5 @@ A set of tools using randomizations to help you make decisions
   - [ ] Mahjong
   - [ ] Scissor, Paper, Rock
   - [ ] Hand Front and Back
-- [ ] Third Party API
-  - [ ] Map API
 - [ ] Build
 - [ ] Deploy

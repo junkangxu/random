@@ -1,0 +1,14 @@
+.buttonDiv {
+  margin-top: 12px;
+  text-align: center;
+}
+
+.resultDiv {
+  margin-top: 12px;
+  text-align: center;
+}
+
+.mapDiv {
+  width: 100%;
+  height: 400px;
+}
