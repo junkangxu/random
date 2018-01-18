@@ -138,6 +138,10 @@ export function getRandomCharacter(type) {
   }
 }
 
+export function getRandomInRange(from, to, fixed) {
+  return (Math.random() * (to - from) + from).toFixed(fixed) * 1;
+}
+
 export default function getRandomInt(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }

@@ -18,6 +18,7 @@ import ContentMahjong from './ContentMahjong';
 import ContentTime from './ContentTime';
 import ContentDate from './ContentDate';
 import ContentHistory from './ContentHistory';
+import ContentMap from './ContentMap';
 
 import './AppNav.css';
 
@@ -68,6 +69,8 @@ export default class AppNav extends React.Component {
         return <ContentYesOrNo />;
       case 5:
         return <ContentCoin />;
+      case 6:
+        return <ContentMap />;
       case 7:
         return <ContentPoker />;
       case 8:
@@ -113,7 +116,7 @@ export default class AppNav extends React.Component {
           <MenuItem onClick={this.handleClick.bind(this, 3)} checked={this.state.type === 3}>骰子</MenuItem>
           <MenuItem onClick={this.handleClick.bind(this, 4)} checked={this.state.type === 4}>是否</MenuItem>
           <MenuItem onClick={this.handleClick.bind(this, 5)} checked={this.state.type === 5}>硬币</MenuItem>
-          <MenuItem onClick={this.handleClose}>地图</MenuItem>
+          <MenuItem onClick={this.handleClick.bind(this, 6)} checked={this.state.type === 6}>地图</MenuItem>
           <MenuItem onClick={this.handleClick.bind(this, 7)} checked={this.state.type === 7}>扑克牌</MenuItem>
           <MenuItem onClick={this.handleClick.bind(this, 8)} checked={this.state.type === 8}>麻将</MenuItem>
           <MenuItem onClick={this.handleClick.bind(this, 9)} checked={this.state.type === 9}>列表</MenuItem>

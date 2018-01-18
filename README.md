@@ -9,41 +9,9 @@ A set of tools using randomizations to help you make decisions
 
 ## TODO
 - [x] Environment setup (1/5)
-- [ ] Rough implementation
-  - [x] Number (1/6)
-  - [x] Characters (1/7)
-  - [x] Dice (1/7)
-  - [x] Y or N (1/7)
-  - [x] Coin (1/7)
-  - [ ] Map
-  - [x] Poker (1/7)
-  - [x] Mahjong (1/7)
-  - [x] List (1/7)
-    - [x] Shuffle (1/7)
-    - [x] Pick from (1/7)
-  - [x] Scissor, Paper, Rock (1/7)
-  - [x] Hand Front and Back (1/7)
-  - [x] Time (1/9)
-  - [x] Date (1/9)
-  - [x] Home Page (1/8)
-  - [x] History (1/10)
-- [ ] Style
-  - [x] Number (1/8)
-  - [x] Characters (1/8)
-  - [x] Dice (1/8)
-  - [x] Y or N (1/8)
-  - [x] Coin (1/8)
-  - [ ] Map
-  - [x] Poker (1/8)
-  - [x] Mahjong (1/8)
-  - [x] List (1/8)
-  - [x] Scissor, Paper, Rock (1/8)
-  - [x] Hand Front and Back (1/8)
-  - [x] Time (1/9)
-  - [x] Date (1/9)
-  - [x] Home Page (1/9)
-  - [x] History (1/10)
 - [x] Local Storage (1/10)
+- [x] Rough implementation (1/18)
+- [x] Style (1/18)
 - [ ] Pictures
   - [ ] Dice
   - [ ] Coin
