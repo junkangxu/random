@@ -14,8 +14,6 @@ const maxLongitude = 180;
 const minLatitude = -90;
 const minLongitude = -180;
 
-const ApiKey = "AIzaSyCzh__hj0x5ywWnMZTHDv02i_PgSZ1B9mw";
-
 export default class ContentMap extends React.Component {
 
   constructor(props) {
