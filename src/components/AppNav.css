@@ -4,3 +4,7 @@
   margin-right: 2%;
   margin-right: 2%;
 }
+
+.muidocs-icon-custom-github:before {
+    content: "\e625";
+}

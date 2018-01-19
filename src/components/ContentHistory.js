@@ -37,7 +37,7 @@ export default class ContentHistory extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="contentDiv">
         <SimpleModal
           title={dialogTitle}
           content={dialogContent}

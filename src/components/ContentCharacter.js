@@ -38,7 +38,7 @@ export default class ContentCharacter extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="contentDiv">
         <div className="header">
           <h3>英文字母</h3>
           <Divider />

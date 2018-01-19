@@ -53,7 +53,7 @@ export default class ContentDice extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="contentDiv">
         <div className="header">
           <h3>骰子</h3>
           <Divider />

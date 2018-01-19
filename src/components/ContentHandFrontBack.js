@@ -60,7 +60,7 @@ export default class ContentHandFrontBack extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="contentDiv">
         <div className="header">
           <h3>手心手背</h3>
           <Divider />

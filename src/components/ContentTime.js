@@ -34,7 +34,7 @@ export default class ContentTime extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="contentDiv">
         <div className="header">
           <h3>时间</h3>
           <Divider />

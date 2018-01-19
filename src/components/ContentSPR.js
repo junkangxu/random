@@ -39,7 +39,7 @@ export default class ContentSPR extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="contentDiv">
         <div className="header">
           <h3>剪刀石头布</h3>
           <Divider />

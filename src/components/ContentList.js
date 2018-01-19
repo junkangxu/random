@@ -3,6 +3,7 @@ import Chip from 'material-ui/Chip';
 import TextField from 'material-ui/TextField';
 import { RadioButton, RadioButtonGroup } from 'material-ui/RadioButton';
 import RaisedButton from 'material-ui/RaisedButton';
+import Divider from 'material-ui/Divider';
 import getRandomInt, { shuffle } from '../utils/generateRandom';
 import { addToLocalStorage } from '../utils/localStorage';
 
@@ -112,7 +113,11 @@ export default class ChipExampleArray extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="contentDiv">
+        <div className="header">
+          <h3>列表</h3>
+          <Divider />
+        </div>
         <div className="inputDiv">
           <TextField
             hintText="Input Field"

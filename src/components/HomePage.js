@@ -53,11 +53,6 @@ const HomePage = () => (
             primaryText="david.xujunkang@gmail.com"
             secondaryText="Personal"
           />
-          <ListItem
-            leftIcon={<CommunicationEmail />}
-            primaryText="junkangxu"
-            secondaryText="Personal"
-          />
           </List>
         </div>
       </Tab>

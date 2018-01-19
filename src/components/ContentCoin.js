@@ -30,7 +30,7 @@ export default class ContentCoin extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="contentDiv">
         <div className="header">
           <h3>硬币</h3>
           <Divider />

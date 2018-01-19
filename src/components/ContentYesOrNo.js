@@ -31,7 +31,7 @@ export default class ContentYesOrNo extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="contentDiv">
         <div className="header">
           <h3>是否</h3>
           <Divider />
