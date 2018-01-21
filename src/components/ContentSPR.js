@@ -6,6 +6,10 @@ import { addToLocalStorage } from '../utils/localStorage';
 
 import './ContentSPR.css';
 
+import Paper from '../imgs/SPR/paper.png';
+import Scissor from '../imgs/SPR/scissor.png';
+import Rock from '../imgs/SPR/rock.png';
+
 const type = "Paper Scissor Rock";
 
 export default class ContentSPR extends React.Component {
@@ -38,6 +42,20 @@ export default class ContentSPR extends React.Component {
   }
 
   render() {
+
+    let result = this.state.result;
+    let picSource = "";
+
+    if (result === "Scissor") {
+      picSource = Scissor;
+    } else if (result === "Paper") {
+      picSource = Paper;
+    } else if (result === "Rock") {
+      picSource = Rock;
+    }
+
+    let resultPic = (<div><img src={picSource} alt="" height="180" width="165" /></div>)
+
     return (
       <div className="contentDiv">
         <div className="header">
@@ -52,7 +70,7 @@ export default class ContentSPR extends React.Component {
           />
         </div>
         <div className="resultDiv">
-          <h1>{this.state.result}</h1>
+          <div>{resultPic}</div>
         </div>
       </div>
     );

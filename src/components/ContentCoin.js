@@ -6,6 +6,9 @@ import { addToLocalStorage } from '../utils/localStorage';
 
 import './ContentCoin.css';
 
+import Head from '../imgs/coin/head.jpg';
+import Tail from '../imgs/coin/tail.jpg';
+
 const type = "Coin";
 
 export default class ContentCoin extends React.Component {
@@ -29,6 +32,15 @@ export default class ContentCoin extends React.Component {
   };
 
   render() {
+    let result = this.state.result;
+    let resultPic = "";
+
+    if (result === "Head") {
+      resultPic = (<div><img src={Head} alt="" height="120" width="120" /></div>);
+    } else if (result === "Tail") {
+      resultPic = (<div><img src={Tail} alt="" height="120" width="120" /></div>)
+    }
+
     return (
       <div className="contentDiv">
         <div className="header">
@@ -43,7 +55,7 @@ export default class ContentCoin extends React.Component {
           />
         </div>
         <div className="resultDiv">
-          <h1>{this.state.result}</h1>
+          <div>{resultPic}</div>
         </div>
       </div>
     );

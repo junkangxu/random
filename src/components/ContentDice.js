@@ -7,6 +7,13 @@ import { addToLocalStorage } from '../utils/localStorage';
 
 import './ContentDice.css';
 
+import Dice1 from '../imgs/dice/Dice1.gif';
+import Dice2 from '../imgs/dice/Dice2.gif';
+import Dice3 from '../imgs/dice/Dice3.gif';
+import Dice4 from '../imgs/dice/Dice4.gif';
+import Dice5 from '../imgs/dice/Dice5.gif';
+import Dice6 from '../imgs/dice/Dice6.gif';
+
 const type = "Dice";
 
 export default class ContentDice extends React.Component {
@@ -16,9 +23,27 @@ export default class ContentDice extends React.Component {
     this.state = {
       type: "one",
       result: [],
-      strResult: ""
     };
   }
+
+  getDiceImage = (number) => {
+    switch (number) {
+      case 1:
+        return Dice1;
+      case 2:
+        return Dice2;
+      case 3:
+        return Dice3;
+      case 4:
+        return Dice4;
+      case 5:
+        return Dice5;
+      case 6:
+        return Dice6;
+      default:
+        return "";
+    }
+  };
 
   handleRadioChange = (event, value) => this.setState({type: value});
 
@@ -47,11 +72,22 @@ export default class ContentDice extends React.Component {
     }
     if (retVal !== "") {
       addToLocalStorage(type, retVal);
-      this.setState({strResult: retVal});
     }
   };
 
   render() {
+
+    let result = this.state.result;
+    let resultPic = "";
+
+    if (result.length === 1) {
+      resultPic = (<div><img src={this.getDiceImage(result[0])} alt="" height="120" width="120"/></div>);
+    } else if (result.length === 2) {
+      resultPic = (<div><img src={this.getDiceImage(result[0])} alt="" height="120" width="120" />
+       &nbsp;&nbsp;
+      <img src={this.getDiceImage(result[1])} alt="" height="80" width="80" /></div>);
+    }
+
     return (
       <div className="contentDiv">
         <div className="header">
@@ -84,7 +120,7 @@ export default class ContentDice extends React.Component {
           />
         </div>
         <div className="resultDiv">
-          <h1>{this.state.strResult}</h1>
+          <div>{resultPic}</div>
         </div>
       </div>
     );
