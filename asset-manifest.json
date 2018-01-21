@@ -1,6 +1,15 @@
 {
-  "main.css": "static/css/main.c6fcbe24.css",
-  "main.css.map": "static/css/main.c6fcbe24.css.map",
-  "main.js": "static/js/main.9d955997.js",
-  "main.js.map": "static/js/main.9d955997.js.map"
+  "main.css": "static/css/main.97980993.css",
+  "main.css.map": "static/css/main.97980993.css.map",
+  "main.js": "static/js/main.b718f0da.js",
+  "main.js.map": "static/js/main.b718f0da.js.map",
+  "static/media/Dice3.gif": "static/media/Dice3.2640d4c0.gif",
+  "static/media/Dice4.gif": "static/media/Dice4.3bc200b7.gif",
+  "static/media/Dice5.gif": "static/media/Dice5.4dd3a454.gif",
+  "static/media/Dice6.gif": "static/media/Dice6.19395875.gif",
+  "static/media/head.jpg": "static/media/head.a8b5a43e.jpg",
+  "static/media/paper.png": "static/media/paper.276d814e.png",
+  "static/media/rock.png": "static/media/rock.b2c05b27.png",
+  "static/media/scissor.png": "static/media/scissor.450d4e91.png",
+  "static/media/tail.jpg": "static/media/tail.127dc4cb.jpg"
 }
