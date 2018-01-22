@@ -54,7 +54,7 @@ export default class ContentCoin extends React.Component {
             onClick={this.getResult}
           />
         </div>
-        <div className="resultDiv">
+        <div className="resultPicDiv">
           <div>{resultPic}</div>
         </div>
       </div>

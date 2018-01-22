@@ -46,11 +46,11 @@ export default class ContentMap extends React.Component {
           />
         </div>
         <div className="resultDiv">
-          <h3>
+          <h6>
           Latitude: {this.state.center[0]}
-          <br />
+          &nbsp;&nbsp;
           Longitude: {this.state.center[1]}
-          </h3>
+          </h6>
           <div className="mapDiv">
             <SimpleMap center={this.state.center} zoom={1} />
           </div>

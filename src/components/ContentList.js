@@ -86,7 +86,7 @@ export default class ChipExampleArray extends React.Component {
       let retVal = "";
       for (let j = 0; j < tmpList.length; j++) {
         retVal += tmpList[j];
-        retVal += "   ";
+        retVal += "    ";
       }
       this.setState({result: retVal});
       addToLocalStorage(type, retVal);

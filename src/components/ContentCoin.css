@@ -4,7 +4,8 @@
   margin-bottom: 12px;
 }
 
-.resultDiv {
-  margin-top: 12px;
+.resultPicDiv {
+  padding-top: 32px;
+  margin-top: 64px;
   text-align: center;
 }

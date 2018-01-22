@@ -13,7 +13,7 @@ export default class ContentHistory extends React.Component {
     super(props);
     this.state = {
       dialogOpen: false,
-      height: "1200px",
+      height: "400px",
       tableData: []
     };
   }

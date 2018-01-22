@@ -1,6 +1,10 @@
+.line {
+  font-size: 200%;
+}
+
 .selectDiv {
   width: 230px;
-  margin: 0 auto;  
+  margin: 0 auto;
 }
 
 .buttonDiv {

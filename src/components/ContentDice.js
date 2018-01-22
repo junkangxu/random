@@ -85,7 +85,7 @@ export default class ContentDice extends React.Component {
     } else if (result.length === 2) {
       resultPic = (<div><img src={this.getDiceImage(result[0])} alt="" height="120" width="120" />
        &nbsp;&nbsp;
-      <img src={this.getDiceImage(result[1])} alt="" height="80" width="80" /></div>);
+      <img src={this.getDiceImage(result[1])} alt="" height="120" width="120" /></div>);
     }
 
     return (
@@ -119,7 +119,7 @@ export default class ContentDice extends React.Component {
             onClick={this.getRandomDice}
           />
         </div>
-        <div className="resultDiv">
+        <div className="resultPicDiv">
           <div>{resultPic}</div>
         </div>
       </div>
