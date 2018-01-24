@@ -6,7 +6,6 @@ import AppNav from './components/AppNav';
 import './App.css';
 
 const muiTheme = getMuiTheme({
-  fontFamily: 'Arial Black, Gadget, sans-serif',
   palette: {
     primary1Color: red500
   }

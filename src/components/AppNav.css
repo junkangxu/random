@@ -5,6 +5,10 @@
   margin-right: 2%;
 }
 
+.subheader {
+  font-size: 25px;
+}
+
 .muidocs-icon-custom-github:before {
     content: "\e625";
 }

@@ -5,6 +5,7 @@ import MenuItem from 'material-ui/MenuItem';
 import IconButton from 'material-ui/IconButton';
 import Divider from 'material-ui/Divider';
 import SvgIcon from 'material-ui/SvgIcon';
+import Subheader from 'material-ui/Subheader';
 import HomePage from './HomePage';
 import ContentNumber from './ContentNumber';
 import ContentCharacter from './ContentCharacter';
@@ -96,7 +97,6 @@ export default class AppNav extends React.Component {
       <div>
         <AppBar
           title="Random"
-          //iconElementRight={<Login />}
           iconElementRight={<IconButton><GitHubIcon /></IconButton>}
           onLeftIconButtonClick={this.handleToggle}
           onRightIconButtonClick={this.handleGitHubClick}
@@ -107,10 +107,10 @@ export default class AppNav extends React.Component {
           open={this.state.open}
           onRequestChange={(open) => this.setState({open})}
         >
-          <MenuItem onClick={this.handleClick.bind(this, 0)} checked={this.state.type === 0}>主页</MenuItem>
+          <MenuItem onClick={this.handleClick.bind(this, 0)}>主页</MenuItem>
           <br />
           <Divider />
-          <br />
+          <Subheader className="subheader">基本功能</Subheader>
           <MenuItem onClick={this.handleClick.bind(this, 1)} checked={this.state.type === 1}>数字</MenuItem>
           <MenuItem onClick={this.handleClick.bind(this, 2)} checked={this.state.type === 2}>英文字母</MenuItem>
           <MenuItem onClick={this.handleClick.bind(this, 3)} checked={this.state.type === 3}>骰子</MenuItem>
@@ -126,7 +126,7 @@ export default class AppNav extends React.Component {
           <MenuItem onClick={this.handleClick.bind(this, 13)} checked={this.state.type === 13}>日期</MenuItem>
           <br />
           <Divider />
-          <br />
+          <Subheader className="subheader">设置</Subheader>
           <MenuItem onClick={this.handleClick.bind(this, 14)} checked={this.state.type === 14}>历史</MenuItem>
         </Drawer>
         <div className="content">
