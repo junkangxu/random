@@ -1,7 +1,3 @@
-h1 {
-  font-size: 150%;
-}
-
 .inputDiv {
   width: 230px;
   margin: 0 auto;
@@ -12,19 +8,4 @@ h1 {
   margin: 20px auto;
   display: flex;
   flex-wrap: wrap;
-}
-
-.radioDiv {
-  width: 200px;
-  margin: 0 auto;
-}
-
-.buttonDiv {
-  margin-top: 12px;
-  text-align: center;
-}
-
-.resultDiv {
-  margin-top: 12px;
-  text-align: center;
 }

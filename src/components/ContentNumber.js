@@ -1,13 +1,15 @@
 import React from 'react';
 import TextField from 'material-ui/TextField';
-import RaisedButton from 'material-ui/RaisedButton';
-import Divider from 'material-ui/Divider';
+import ContentHeader from './Common/ContentHeader';
+import ActionButton from './Common/ActionButton';
+import TextResultArea from './Common/TextResultArea';
 import getRandomInt from '../utils/generateRandom';
 import { addToLocalStorage } from '../utils/localStorage';
 
 import './ContentNumber.css';
 
 const type = "Number";
+const title = "数字";
 
 export default class ContentNumber extends React.Component {
 
@@ -43,10 +45,7 @@ export default class ContentNumber extends React.Component {
   render() {
     return (
       <div className="contentDiv">
-        <div className="header">
-          <h3>数字</h3>
-          <Divider />
-        </div>
+        <ContentHeader title={title} />
         <div className="inputDiv">
           <TextField
             hintText="minValueField"
@@ -59,18 +58,8 @@ export default class ContentNumber extends React.Component {
             onChange={this.changeMaxValue}
           />
         </div>
-        <div className="buttonDiv">
-          <RaisedButton
-            label="GET"
-            primary={true}
-            onClick={this.getResult}
-          />
-        </div>
-        <div className="resultDiv">
-          <h1>
-            {this.state.result}
-          </h1>
-        </div>
+        <ActionButton func={this.getResult} />
+        <TextResultArea result={this.state.result} />
       </div>
     );
   }

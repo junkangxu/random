@@ -1,12 +1,13 @@
 import React from 'react';
-import RaisedButton from 'material-ui/RaisedButton';
-import Divider from 'material-ui/Divider';
+import ContentHeader from './Common/ContentHeader';
+import ActionButton from './Common/ActionButton';
+import TextResultArea from './Common/TextResultArea';
 import getRandomInt from '../utils/generateRandom';
 import { addToLocalStorage } from '../utils/localStorage';
 
-import './ContentPoker.css';
-
 const type = "Poker";
+const title = "扑克";
+const caste = ["", "黑桃", "红心", "梅花", "方片"];
 
 export default class ContentPoker extends React.Component {
 
@@ -20,23 +21,7 @@ export default class ContentPoker extends React.Component {
 
   getResultHead = () => {
     let randomInt = getRandomInt(1, 4);
-    let newResultHead;
-    switch (randomInt) {
-      case 1:
-        newResultHead = "黑桃";
-        break;
-      case 2:
-        newResultHead = "红心";
-        break;
-      case 3:
-        newResultHead = "梅花";
-        break;
-      case 4:
-        newResultHead = "方片";
-        break;
-      default:
-        newResultHead = "";
-    }
+    let newResultHead = caste[randomInt];
     this.setState({resultHead: newResultHead});
     return newResultHead;
   }
@@ -66,20 +51,9 @@ export default class ContentPoker extends React.Component {
   render() {
     return (
       <div className="contentDiv">
-        <div className="header">
-          <h3>扑克牌</h3>
-          <Divider />
-        </div>
-        <div className="buttonDiv">
-          <RaisedButton
-            label="GET"
-            primary={true}
-            onClick={this.getResult}
-          />
-        </div>
-        <div className="resultDiv">
-          <h1>{this.state.resultHead + "  "}{this.state.resultBody}</h1>
-        </div>
+        <ContentHeader title={title} />
+        <ActionButton func={this.getResult} />
+        <TextResultArea result={this.state.resultHead + "  " + this.state.resultBody} />
       </div>
     );
   }

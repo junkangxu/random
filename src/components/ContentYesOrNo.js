@@ -1,12 +1,12 @@
 import React from 'react';
-import RaisedButton from 'material-ui/RaisedButton';
-import Divider from 'material-ui/Divider';
+import ContentHeader from './Common/ContentHeader';
+import ActionButton from './Common/ActionButton';
+import TextResultArea from './Common/TextResultArea';
 import getRandomInt from '../utils/generateRandom';
 import { addToLocalStorage } from '../utils/localStorage';
 
-import './ContentYesOrNo.css';
-
 const type = "Yes/No";
+const title = "是否";
 
 export default class ContentYesOrNo extends React.Component {
 
@@ -32,20 +32,9 @@ export default class ContentYesOrNo extends React.Component {
   render() {
     return (
       <div className="contentDiv">
-        <div className="header">
-          <h3>是否</h3>
-          <Divider />
-        </div>
-        <div className="buttonDiv">
-          <RaisedButton
-            label="GET"
-            primary={true}
-            onClick={this.getResult}
-          />
-        </div>
-        <div className="resultDiv">
-          <h1>{this.state.result}</h1>
-        </div>
+        <ContentHeader title={title} />
+        <ActionButton func={this.getResult} />
+        <TextResultArea result={this.state.result} />
       </div>
     );
   }

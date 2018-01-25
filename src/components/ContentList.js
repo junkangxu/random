@@ -1,29 +1,21 @@
 import React from 'react';
 import Chip from 'material-ui/Chip';
 import TextField from 'material-ui/TextField';
-import { RadioButton, RadioButtonGroup } from 'material-ui/RadioButton';
-import RaisedButton from 'material-ui/RaisedButton';
-import Divider from 'material-ui/Divider';
 import ContentHeader from './Common/ContentHeader';
 import ActionButton from './Common/ActionButton';
 import TextResultArea from './Common/TextResultArea';
+import RadioSelect from './Common/RadioSelect';
 import getRandomInt, { shuffle } from '../utils/generateRandom';
 import { addToLocalStorage } from '../utils/localStorage';
 
 import './ContentList.css';
 
-const styles = {
-  block: {
-    maxWidth: 250,
-  },
-  radioButton: {
-    marginTop: 16,
-    marginBottom: 16,
-  },
-};
-
 const type = "List";
 const title = "列表";
+const radioArr = [
+  {value: "shuffle", label: "shuffle the list"},
+  {value: "pick", label: "pick one from the list"}
+];
 
 export default class ChipExampleArray extends React.Component {
 
@@ -130,24 +122,11 @@ export default class ChipExampleArray extends React.Component {
         <div className="listDiv">
           {this.state.chipData.map(this.renderChip, this)}
         </div>
-        <div className="radioDiv">
-          <RadioButtonGroup
-            name="shipSpeed"
-            defaultSelected="shuffle"
-            onChange={this.handleRadioChange}
-          >
-            <RadioButton
-              value="shuffle"
-              label="Shuffle the list"
-              style={styles.radioButton}
-            />
-            <RadioButton
-              value="pick"
-              label="Pick one from the list"
-              style={styles.radioButton}
-            />
-          </RadioButtonGroup>
-        </div>
+        <RadioSelect
+          default="shuffle"
+          func={this.handleRadioChange}
+          arr={radioArr}
+        />
         <ActionButton func={this.getResult} />
         <TextResultArea result={this.state.result}/>
       </div>

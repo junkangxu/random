@@ -1,13 +1,13 @@
 import React from 'react';
-import TimePicker from 'material-ui/TimePicker';
-import RaisedButton from 'material-ui/RaisedButton';
-import Divider from 'material-ui/Divider';
+import ContentHeader from './Common/ContentHeader';
+import ActionButton from './Common/ActionButton';
+import TextResultArea from './Common/TextResultArea';
+import TimePickerPair from './Common/TimePickerPair';
 import { getRandomTime } from '../utils/generateRandom';
 import { addToLocalStorage } from '../utils/localStorage';
 
-import './ContentTime.css';
-
 const type = "Time";
+const title = "时间";
 
 export default class ContentTime extends React.Component {
 
@@ -35,34 +35,13 @@ export default class ContentTime extends React.Component {
   render() {
     return (
       <div className="contentDiv">
-        <div className="header">
-          <h3>时间</h3>
-          <Divider />
-        </div>
-        <div className="inputDiv">
-          <TimePicker
-            format="24hr"
-            hintText="Begin"
-            value={this.state.lowerResult}
-            onChange={this.handleChangeLowerTimePicker}
-          />
-          <TimePicker
-            format="24hr"
-            hintText="End"
-            value={this.state.upperResult}
-            onChange={this.handleChangeUpperTimePicker}
-          />
-        </div>
-        <div className="buttonDiv">
-          <RaisedButton
-            label="GET"
-            primary={true}
-            onClick={this.getRandomTime}
-          />
-        </div>
-        <div className="resultDiv">
-          <h1>{this.state.result}</h1>
-        </div>
+        <ContentHeader title={title}/>
+        <TimePickerPair
+          handleBeginTimeChange={this.handleChangeLowerTimePicker}
+          handleEndTimeChange={this.handleChangeUpperTimePicker}
+        />
+        <ActionButton func={this.getRandomTime} />
+        <TextResultArea result={this.state.result} />
       </div>
     );
   }

@@ -1,16 +1,22 @@
 import React from 'react';
-import RaisedButton from 'material-ui/RaisedButton';
-import Divider from 'material-ui/Divider';
+import ContentHeader from './Common/ContentHeader';
+import ActionButton from './Common/ActionButton';
+import PicResultArea from './Common/PicResultArea';
 import getRandomInt from '../utils/generateRandom';
 import { addToLocalStorage } from '../utils/localStorage';
-
-import './ContentSPR.css';
 
 import Paper from '../imgs/SPR/paper.png';
 import Scissor from '../imgs/SPR/scissor.png';
 import Rock from '../imgs/SPR/rock.png';
 
 const type = "Paper Scissor Rock";
+const title = "剪刀石头布";
+
+const picMap = {
+  "Paper": Paper,
+  "Scissor": Scissor,
+  "Rock": Rock,
+};
 
 export default class ContentSPR extends React.Component {
 
@@ -44,34 +50,15 @@ export default class ContentSPR extends React.Component {
   render() {
 
     let result = this.state.result;
-    let picSource = "";
-
-    if (result === "Scissor") {
-      picSource = Scissor;
-    } else if (result === "Paper") {
-      picSource = Paper;
-    } else if (result === "Rock") {
-      picSource = Rock;
-    }
+    let picSource = picMap[result];
 
     let resultPic = (<div><img src={picSource} alt="" height="180" width="165" /></div>)
 
     return (
       <div className="contentDiv">
-        <div className="header">
-          <h3>剪刀石头布</h3>
-          <Divider />
-        </div>
-        <div className="buttonDiv">
-          <RaisedButton
-            label="GET"
-            primary={true}
-            onClick={this.getResult}
-          />
-        </div>
-        <div className="resultPicDiv">
-          <div>{resultPic}</div>
-        </div>
+        <ContentHeader title={title} />
+        <ActionButton func={this.getResult} />
+        <PicResultArea img={resultPic} />
       </div>
     );
   }

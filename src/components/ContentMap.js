@@ -1,6 +1,6 @@
 import React from 'react';
-import RaisedButton from 'material-ui/RaisedButton';
-import Divider from 'material-ui/Divider';
+import ContentHeader from './Common/ContentHeader';
+import ActionButton from './Common/ActionButton';
 import SimpleMap from './SimpleMap';
 import { getRandomInRange } from '../utils/generateRandom';
 import { addToLocalStorage } from '../utils/localStorage';
@@ -8,6 +8,7 @@ import { addToLocalStorage } from '../utils/localStorage';
 import './ContentMap.css';
 
 const type = "Map";
+const title = "地图";
 const fixed = 5;
 const maxLatitude = 90;
 const maxLongitude = 180;
@@ -34,17 +35,8 @@ export default class ContentMap extends React.Component {
   render() {
     return (
       <div className="contentDiv">
-        <div className="header">
-          <h3>地图</h3>
-          <Divider />
-        </div>
-        <div className="buttonDiv">
-          <RaisedButton
-            label="GET"
-            primary={true}
-            onClick={this.getResult}
-          />
-        </div>
+        <ContentHeader title={title} />
+        <ActionButton func={this.getResult} />
         <div className="resultDiv">
           <h6>
           Latitude: {this.state.center[0]}
