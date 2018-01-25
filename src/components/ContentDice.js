@@ -1,11 +1,10 @@
 import React from 'react';
-import RaisedButton from 'material-ui/RaisedButton';
-import { RadioButton, RadioButtonGroup } from 'material-ui/RadioButton';
-import Divider from 'material-ui/Divider';
+import ActionButton from './Common/ActionButton';
+import ContentHeader from './Common/ContentHeader';
+import RadioSelect from './Common/RadioSelect';
+import PicResultArea from './Common/PicResultArea';
 import getRandomInt from '../utils/generateRandom';
 import { addToLocalStorage } from '../utils/localStorage';
-
-import './ContentDice.css';
 
 import Dice1 from '../imgs/dice/Dice1.gif';
 import Dice2 from '../imgs/dice/Dice2.gif';
@@ -15,6 +14,12 @@ import Dice5 from '../imgs/dice/Dice5.gif';
 import Dice6 from '../imgs/dice/Dice6.gif';
 
 const type = "Dice";
+const title = "骰子";
+const dices = ["", Dice1, Dice2, Dice3, Dice4, Dice5, Dice6];
+const radioArr = [
+  {value: "one", label: "one dice at a time"},
+  {value: "two", label: "two dices at a time"},
+];
 
 export default class ContentDice extends React.Component {
 
@@ -27,22 +32,7 @@ export default class ContentDice extends React.Component {
   }
 
   getDiceImage = (number) => {
-    switch (number) {
-      case 1:
-        return Dice1;
-      case 2:
-        return Dice2;
-      case 3:
-        return Dice3;
-      case 4:
-        return Dice4;
-      case 5:
-        return Dice5;
-      case 6:
-        return Dice6;
-      default:
-        return "";
-    }
+    return dices[number];
   };
 
   handleRadioChange = (event, value) => this.setState({type: value});
@@ -90,38 +80,14 @@ export default class ContentDice extends React.Component {
 
     return (
       <div className="contentDiv">
-        <div className="header">
-          <h3>骰子</h3>
-          <Divider />
-        </div>
-        <div className="radioDiv">
-          <RadioButtonGroup
-            name="shipSpeed"
-            defaultSelected="one"
-            onChange={this.handleRadioChange}
-          >
-            <RadioButton
-              className="radio"
-              value="one"
-              label="one dice at a time"
-            />
-            <RadioButton
-              className="radio"
-              value="two"
-              label="two dices at a time"
-            />
-          </RadioButtonGroup>
-        </div>
-        <div className="buttonDiv">
-          <RaisedButton
-            label="GET"
-            primary={true}
-            onClick={this.getRandomDice}
-          />
-        </div>
-        <div className="resultPicDiv">
-          <div>{resultPic}</div>
-        </div>
+        <ContentHeader title={title}/>
+        <RadioSelect
+          default="Both"
+          func={this.handleRadioChange}
+          arr={radioArr}
+        />
+        <ActionButton func={this.getRandomDice} />
+        <PicResultArea img={resultPic} />
       </div>
     );
   }

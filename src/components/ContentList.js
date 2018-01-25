@@ -4,6 +4,9 @@ import TextField from 'material-ui/TextField';
 import { RadioButton, RadioButtonGroup } from 'material-ui/RadioButton';
 import RaisedButton from 'material-ui/RaisedButton';
 import Divider from 'material-ui/Divider';
+import ContentHeader from './Common/ContentHeader';
+import ActionButton from './Common/ActionButton';
+import TextResultArea from './Common/TextResultArea';
 import getRandomInt, { shuffle } from '../utils/generateRandom';
 import { addToLocalStorage } from '../utils/localStorage';
 
@@ -20,6 +23,7 @@ const styles = {
 };
 
 const type = "List";
+const title = "列表";
 
 export default class ChipExampleArray extends React.Component {
 
@@ -114,10 +118,7 @@ export default class ChipExampleArray extends React.Component {
   render() {
     return (
       <div className="contentDiv">
-        <div className="header">
-          <h3>列表</h3>
-          <Divider />
-        </div>
+        <ContentHeader title={title} />
         <div className="inputDiv">
           <TextField
             hintText="Input Field"
@@ -125,13 +126,7 @@ export default class ChipExampleArray extends React.Component {
             onChange={this.handleInputChange}
           />
         </div>
-        <div className="buttonDiv">
-          <RaisedButton
-            label="ADD"
-            primary={true}
-            onClick={this.addToList}
-          />
-        </div>
+        <ActionButton func={this.addToList}/>
         <div className="listDiv">
           {this.state.chipData.map(this.renderChip, this)}
         </div>
@@ -153,16 +148,8 @@ export default class ChipExampleArray extends React.Component {
             />
           </RadioButtonGroup>
         </div>
-        <div className="buttonDiv">
-          <RaisedButton
-            label="GET"
-            primary={true}
-            onClick={this.getResult}
-          />
-        </div>
-        <div className="resultDiv">
-          <h1>{this.state.result}</h1>
-        </div>
+        <ActionButton func={this.getResult} />
+        <TextResultArea result={this.state.result}/>
       </div>
     );
   }

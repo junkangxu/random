@@ -1,15 +1,15 @@
 import React from 'react';
-import RaisedButton from 'material-ui/RaisedButton';
-import Divider from 'material-ui/Divider';
+import ContentHeader from './Common/ContentHeader';
+import ActionButton from './Common/ActionButton';
+import PicResultArea from './Common/PicResultArea';
 import getRandomInt from '../utils/generateRandom';
 import { addToLocalStorage } from '../utils/localStorage';
-
-import './ContentCoin.css';
 
 import Head from '../imgs/coin/head.jpg';
 import Tail from '../imgs/coin/tail.jpg';
 
 const type = "Coin";
+const title = "硬币";
 
 export default class ContentCoin extends React.Component {
 
@@ -43,20 +43,9 @@ export default class ContentCoin extends React.Component {
 
     return (
       <div className="contentDiv">
-        <div className="header">
-          <h3>硬币</h3>
-          <Divider />
-        </div>
-        <div className="buttonDiv">
-          <RaisedButton
-            label="GET"
-            primary={true}
-            onClick={this.getResult}
-          />
-        </div>
-        <div className="resultPicDiv">
-          <div>{resultPic}</div>
-        </div>
+        <ContentHeader title={title}/>
+        <ActionButton func={this.getResult} />
+        <PicResultArea img={resultPic} />
       </div>
     );
   }

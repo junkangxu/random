@@ -1,13 +1,13 @@
 import React from 'react';
-import DatePicker from 'material-ui/DatePicker';
-import RaisedButton from 'material-ui/RaisedButton';
-import Divider from 'material-ui/Divider';
+import ContentHeader from './Common/ContentHeader';
+import ActionButton from './Common/ActionButton';
+import DatePickerPair from './Common/DatePickerPair';
+import TextResultArea from './Common/TextResultArea';
 import { getRandomDate } from '../utils/generateRandom';
 import { addToLocalStorage } from '../utils/localStorage';
 
-import './ContentDate.css';
-
 const type = "Date";
+const title = "日期";
 
 export default class ContentDate extends React.Component {
 
@@ -39,32 +39,13 @@ export default class ContentDate extends React.Component {
   render() {
     return (
       <div className="contentDiv">
-        <div className="header">
-          <h3>日期</h3>
-          <Divider />
-        </div>
-        <div className="inputDiv">
-          <DatePicker
-            hintText="Begin Date"
-            value={this.state.beginDate}
-            onChange={this.handleBeginDateChange}
-          />
-          <DatePicker
-            hintText="End Date"
-            value={this.state.endDate}
-            onChange={this.handleEndDateChange}
-          />
-        </div>
-        <div className="buttonDiv">
-          <RaisedButton
-            label="GET"
-            primary={true}
-            onClick={this.getRandomDate}
-          />
-        </div>
-        <div className="resultDiv">
-          <h1>{this.state.result}</h1>
-        </div>
+        <ContentHeader title={title} />
+        <DatePickerPair
+          handleBeginDateChange={this.handleBeginDateChange}
+          handleEndDateChange={this.handleEndDateChange}
+        />
+        <ActionButton func={this.getRandomDate} />
+        <TextResultArea result={this.state.result}/>
       </div>
     );
   }

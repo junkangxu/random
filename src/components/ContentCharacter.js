@@ -1,22 +1,19 @@
 import React from 'react';
-import RaisedButton from 'material-ui/RaisedButton';
-import { RadioButton, RadioButtonGroup } from 'material-ui/RadioButton';
-import Divider from 'material-ui/Divider';
+import ContentHeader from './Common/ContentHeader';
+import ActionButton from './Common/ActionButton';
+import TextResultArea from './Common/TextResultArea';
+import RadioSelect from './Common/RadioSelect';
 import { getRandomCharacter } from '../utils/generateRandom';
 import { addToLocalStorage } from '../utils/localStorage';
 
-import './ContentCharacter.css';
-
-const styles = {
-  block: {
-    maxWidth: 250,
-  },
-  radioButton: {
-    marginBottom: 16,
-  },
-};
-
 const type = "Character";
+const title = "英文字母";
+
+const radioArr = [
+  {value: "onlyLower", label: "lower characters only"},
+  {value: "onlyUpper", label: "upper characters only"},
+  {value: "Both", label: "Both upper and lower"},
+];
 
 export default class ContentCharacter extends React.Component {
 
@@ -39,43 +36,14 @@ export default class ContentCharacter extends React.Component {
   render() {
     return (
       <div className="contentDiv">
-        <div className="header">
-          <h3>英文字母</h3>
-          <Divider />
-        </div>
-        <div className="radioDiv">
-          <RadioButtonGroup
-            name="shipSpeed"
-            defaultSelected="Both"
-            onChange={this.handleRadioChange}
-          >
-            <RadioButton
-              value="onlyLower"
-              label="lower characters only"
-              style={styles.radioButton}
-            />
-            <RadioButton
-              value="onlyUpper"
-              label="upper characters only"
-              style={styles.radioButton}
-            />
-            <RadioButton
-              value="Both"
-              label="Both upper and lower"
-              style={styles.radioButton}
-            />
-          </RadioButtonGroup>
-        </div>
-        <div className="buttonDiv">
-          <RaisedButton
-            label="GET"
-            primary={true}
-            onClick={this.getRandomCharacter}
-          />
-        </div>
-        <div className="resultDiv">
-          <h1>{this.state.result}</h1>
-        </div>
+        <ContentHeader title={title}/>
+        <RadioSelect
+          default="Both"
+          func={this.handleRadioChange}
+          arr={radioArr}
+        />
+        <ActionButton func={this.getRandomCharacter} />
+        <TextResultArea result={this.state.result}/>
       </div>
     );
   }

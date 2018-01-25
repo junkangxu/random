@@ -3,11 +3,11 @@ import RaisedButton from 'material-ui/RaisedButton';
 import SelectField from 'material-ui/SelectField';
 import MenuItem from 'material-ui/MenuItem';
 import Divider from 'material-ui/Divider';
-
+import ContentHeader from './Common/ContentHeader';
+import ActionButton from './Common/ActionButton';
+import DropDownSelect from './Common/DropDownSelect';
 import getRandomInt from '../utils/generateRandom';
 import { addToLocalStorage } from '../utils/localStorage';
-
-import './ContentHandFrontBack.css';
 
 const items = [
   <MenuItem key={1} value={1} primaryText="1" />,
@@ -20,6 +20,8 @@ const items = [
 const space = '\u00A0\u00A0\u00A0\u00A0\u00A0';
 const hands = ["手心", "手背"];
 const type = "HandFrontBack";
+const title = "手心手背";
+const floatingText = "人数";
 
 export default class ContentHandFrontBack extends React.Component {
 
@@ -90,26 +92,13 @@ export default class ContentHandFrontBack extends React.Component {
   render() {
     return (
       <div className="contentDiv">
-        <div className="header">
-          <h3>手心手背</h3>
-          <Divider />
-        </div>
-        <div className="selectDiv">
-          <SelectField
-            value={this.state.numOfPeople}
-            onChange={this.handleChange}
-            floatingLabelText="Number of People"
-          >
-            {items}
-          </SelectField>
-        </div>
-        <div className="buttonDiv">
-          <RaisedButton
-            label="GET"
-            primary={true}
-            onClick={this.getRandomHand}
-          />
-        </div>
+        <ContentHeader title={title} />
+        <DropDownSelect
+          func={this.handleChange}
+          text={floatingText}
+          items={items}
+        />
+        <ActionButton func={this.getRandomHand} />
         <div className="resultDiv">
           {this.state.strResult.split("\n").map(i => {
             return <div key={i}><h1>{i}</h1></div>;
