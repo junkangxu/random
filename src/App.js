@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
-import { red500 } from 'material-ui/styles/colors';
+import { blue500 } from 'material-ui/styles/colors';
 import AppNav from './components/AppNav';
 import './App.css';
 
 const muiTheme = getMuiTheme({
   palette: {
-    primary1Color: red500
+    primary1Color: blue500
   }
 });
 
