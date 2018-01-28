@@ -58,7 +58,7 @@ export default class ContentHistory extends React.Component {
             >
               <TableRow className="superhead">
                 <TableHeaderColumn colSpan="2" style={{textAlign: "center"}}>
-                  历史
+                  History
                 </TableHeaderColumn>
               </TableRow>
               <TableRow>

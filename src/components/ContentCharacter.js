@@ -7,7 +7,7 @@ import { getRandomCharacter } from '../utils/generateRandom';
 import { addToLocalStorage } from '../utils/localStorage';
 
 const type = "Character";
-const title = "英文字母";
+const title = type;
 
 const radioArr = [
   {value: "onlyLower", label: "lower characters only"},

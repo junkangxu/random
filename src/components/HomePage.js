@@ -7,19 +7,19 @@ import ContentHeader from './Common/ContentHeader';
 
 import './HomePage.css';
 
-const InfoTitle = "让随机帮助你做决定";
-const ContactTitle = "联系方式";
+const InfoTitle = "Let random help you make decisions";
+const ContactTitle = "Contact";
 
 const Left = () => (
   <div className="bodyLeft">
     <ul>
-      <li>数字</li>
-      <li>英文字母</li>
-      <li>骰子</li>
-      <li>是否</li>
-      <li>硬币</li>
-      <li>地图</li>
-      <li>扑克牌</li>
+      <li>Number</li>
+      <li>Character</li>
+      <li>Dice</li>
+      <li>Yes/No</li>
+      <li>Coin</li>
+      <li>Map</li>
+      <li>Poker</li>
     </ul>
   </div>
 );
@@ -27,12 +27,12 @@ const Left = () => (
 const Right = () => (
   <div className="bodyRight">
     <ul>
-      <li>麻将</li>
-      <li>列表</li>
-      <li>剪刀石头布</li>
-      <li>手心手背</li>
-      <li>时间</li>
-      <li>日期</li>
+      <li>Mahjong</li>
+      <li>List</li>
+      <li>Scissor Paper Rock</li>
+      <li>Hand Front & Back</li>
+      <li>Time</li>
+      <li>Date</li>
     </ul>
   </div>
 );
@@ -44,7 +44,7 @@ const HomePage = () => (
       <Tab label="Info">
         <ContentHeader title={InfoTitle} />
         <div className="body">
-          <h3>现有工具：</h3>
+          <h3>Tools：</h3>
           <Left />
           <Right />
         </div>

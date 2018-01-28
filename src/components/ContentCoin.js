@@ -9,7 +9,7 @@ import Head from '../imgs/coin/head.jpg';
 import Tail from '../imgs/coin/tail.jpg';
 
 const type = "Coin";
-const title = "硬币";
+const title = type;
 
 export default class ContentCoin extends React.Component {
 

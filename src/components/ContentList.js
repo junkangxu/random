@@ -11,7 +11,7 @@ import { addToLocalStorage } from '../utils/localStorage';
 import './ContentList.css';
 
 const type = "List";
-const title = "列表";
+const title = type;
 const radioArr = [
   {value: "shuffle", label: "shuffle the list"},
   {value: "pick", label: "pick one from the list"}

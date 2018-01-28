@@ -103,31 +103,31 @@ export default class AppNav extends React.Component {
         />
         <Drawer
           docked={false}
-          width={200}
+          width={300}
           open={this.state.open}
           onRequestChange={(open) => this.setState({open})}
         >
-          <MenuItem onClick={this.handleClick.bind(this, 0)}>主页</MenuItem>
+          <MenuItem onClick={this.handleClick.bind(this, 0)}>Home</MenuItem>
           <br />
           <Divider />
-          <Subheader className="subheader">基本功能</Subheader>
-          <MenuItem onClick={this.handleClick.bind(this, 1)} checked={this.state.type === 1}>数字</MenuItem>
-          <MenuItem onClick={this.handleClick.bind(this, 2)} checked={this.state.type === 2}>英文字母</MenuItem>
-          <MenuItem onClick={this.handleClick.bind(this, 3)} checked={this.state.type === 3}>骰子</MenuItem>
-          <MenuItem onClick={this.handleClick.bind(this, 4)} checked={this.state.type === 4}>是否</MenuItem>
-          <MenuItem onClick={this.handleClick.bind(this, 5)} checked={this.state.type === 5}>硬币</MenuItem>
-          <MenuItem onClick={this.handleClick.bind(this, 6)} checked={this.state.type === 6}>地图</MenuItem>
-          <MenuItem onClick={this.handleClick.bind(this, 7)} checked={this.state.type === 7}>扑克牌</MenuItem>
-          <MenuItem onClick={this.handleClick.bind(this, 8)} checked={this.state.type === 8}>麻将</MenuItem>
-          <MenuItem onClick={this.handleClick.bind(this, 9)} checked={this.state.type === 9}>列表</MenuItem>
-          <MenuItem onClick={this.handleClick.bind(this, 10)} checked={this.state.type === 10}>剪刀石头布</MenuItem>
-          <MenuItem onClick={this.handleClick.bind(this, 11)} checked={this.state.type === 11}>手心手背</MenuItem>
-          <MenuItem onClick={this.handleClick.bind(this, 12)} checked={this.state.type === 12}>时间</MenuItem>
-          <MenuItem onClick={this.handleClick.bind(this, 13)} checked={this.state.type === 13}>日期</MenuItem>
+          <Subheader className="subheader">Basics</Subheader>
+          <MenuItem onClick={this.handleClick.bind(this, 1)} checked={this.state.type === 1}>Number</MenuItem>
+          <MenuItem onClick={this.handleClick.bind(this, 2)} checked={this.state.type === 2}>Character</MenuItem>
+          <MenuItem onClick={this.handleClick.bind(this, 3)} checked={this.state.type === 3}>Dice</MenuItem>
+          <MenuItem onClick={this.handleClick.bind(this, 4)} checked={this.state.type === 4}>Yes/No</MenuItem>
+          <MenuItem onClick={this.handleClick.bind(this, 5)} checked={this.state.type === 5}>Coin</MenuItem>
+          <MenuItem onClick={this.handleClick.bind(this, 6)} checked={this.state.type === 6}>Map</MenuItem>
+          <MenuItem onClick={this.handleClick.bind(this, 7)} checked={this.state.type === 7}>Poker</MenuItem>
+          <MenuItem onClick={this.handleClick.bind(this, 8)} checked={this.state.type === 8}>Mahjong</MenuItem>
+          <MenuItem onClick={this.handleClick.bind(this, 9)} checked={this.state.type === 9}>List</MenuItem>
+          <MenuItem onClick={this.handleClick.bind(this, 10)} checked={this.state.type === 10}>Scissor Paper Rock</MenuItem>
+          <MenuItem onClick={this.handleClick.bind(this, 11)} checked={this.state.type === 11}>Hand Front & Back</MenuItem>
+          <MenuItem onClick={this.handleClick.bind(this, 12)} checked={this.state.type === 12}>Time</MenuItem>
+          <MenuItem onClick={this.handleClick.bind(this, 13)} checked={this.state.type === 13}>Date</MenuItem>
           <br />
           <Divider />
-          <Subheader className="subheader">设置</Subheader>
-          <MenuItem onClick={this.handleClick.bind(this, 14)} checked={this.state.type === 14}>历史</MenuItem>
+          <Subheader className="subheader">Setting</Subheader>
+          <MenuItem onClick={this.handleClick.bind(this, 14)} checked={this.state.type === 14}>History</MenuItem>
         </Drawer>
         <div className="content">
           {this.getContent()}

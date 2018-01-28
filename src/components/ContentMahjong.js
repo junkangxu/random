@@ -6,7 +6,7 @@ import { addToLocalStorage } from '../utils/localStorage';
 import { getRandomMahjong } from '../utils/generateRandom';
 
 const type = "Mahjong";
-const title = "麻将";
+const title = type;
 
 export default class ContentMahjong extends React.Component {
 

@@ -6,7 +6,7 @@ import getRandomInt from '../utils/generateRandom';
 import { addToLocalStorage } from '../utils/localStorage';
 
 const type = "Yes/No";
-const title = "是否";
+const title = type;
 
 export default class ContentYesOrNo extends React.Component {
 

@@ -14,7 +14,7 @@ import Dice5 from '../imgs/dice/Dice5.gif';
 import Dice6 from '../imgs/dice/Dice6.gif';
 
 const type = "Dice";
-const title = "骰子";
+const title = type;
 const dices = ["", Dice1, Dice2, Dice3, Dice4, Dice5, Dice6];
 const radioArr = [
   {value: "one", label: "one dice at a time"},
@@ -82,7 +82,7 @@ export default class ContentDice extends React.Component {
       <div className="contentDiv">
         <ContentHeader title={title}/>
         <RadioSelect
-          default="Both"
+          default="one"
           func={this.handleRadioChange}
           arr={radioArr}
         />

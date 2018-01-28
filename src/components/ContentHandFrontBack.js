@@ -15,10 +15,10 @@ const items = [
 ];
 
 const space = '\u00A0\u00A0\u00A0\u00A0\u00A0';
-const hands = ["手心", "手背"];
+const hands = ["Front", "Back"];
 const type = "HandFrontBack";
-const title = "手心手背";
-const floatingText = "人数";
+const title = "Hand Front & Back";
+const floatingText = "Number of People";
 
 export default class ContentHandFrontBack extends React.Component {
 

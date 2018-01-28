@@ -6,8 +6,8 @@ import getRandomInt from '../utils/generateRandom';
 import { addToLocalStorage } from '../utils/localStorage';
 
 const type = "Poker";
-const title = "扑克";
-const caste = ["", "黑桃", "红心", "梅花", "方片"];
+const title = type;
+const caste = ["", "Clubs", "Hearts", "Spades", "Diamonds"];
 
 export default class ContentPoker extends React.Component {
 

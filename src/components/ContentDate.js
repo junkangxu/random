@@ -7,7 +7,7 @@ import { getRandomDate } from '../utils/generateRandom';
 import { addToLocalStorage } from '../utils/localStorage';
 
 const type = "Date";
-const title = "日期";
+const title = type;
 
 export default class ContentDate extends React.Component {
 

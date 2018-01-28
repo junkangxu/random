@@ -10,7 +10,7 @@ import Scissor from '../imgs/SPR/scissor.png';
 import Rock from '../imgs/SPR/rock.png';
 
 const type = "Paper Scissor Rock";
-const title = "剪刀石头布";
+const title = type;
 
 const picMap = {
   "Paper": Paper,

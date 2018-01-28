@@ -10,7 +10,7 @@ import { requiredInputError } from '../utils/common';
 import './ContentNumber.css';
 
 const type = "Number";
-const title = "数字";
+const title = type;
 
 export default class ContentNumber extends React.Component {
 

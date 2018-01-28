@@ -8,7 +8,7 @@ import { addToLocalStorage } from '../utils/localStorage';
 import './ContentMap.css';
 
 const type = "Map";
-const title = "地图";
+const title = type;
 const fixed = 5;
 const maxLatitude = 90;
 const maxLongitude = 180;

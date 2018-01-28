@@ -7,7 +7,7 @@ import { getRandomTime } from '../utils/generateRandom';
 import { addToLocalStorage } from '../utils/localStorage';
 
 const type = "Time";
-const title = "时间";
+const title = type;
 
 export default class ContentTime extends React.Component {
 
