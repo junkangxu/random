@@ -7,8 +7,8 @@ const tongList = Array(9).fill("tong");
 const tiaoList = Array(9).fill("tiao");
 const mahjongList = wanList.concat(tongList).concat(tiaoList);
 
-const chineseNumberCoverter = ['有问题', '一', '二', '三', '四', '五', '六', '七', '八', '九'];
-const chineseOtherConverter = ['有问题', '东风', '南风', '西风', '北风', '红中', '白板', '发财'];
+const chineseNumberCoverter = [null, '一', '二', '三', '四', '五', '六', '七', '八', '九'];
+const chineseOtherConverter = [null, '东风', '南风', '西风', '北风', '红中', '白板', '发财'];
 
 const dayOfMonthNormal = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
 const dayOfMonthLeap = [31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];

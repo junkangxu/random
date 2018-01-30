@@ -116,12 +116,15 @@ export default class AppNav extends React.Component {
           <MenuItem onClick={this.handleClick.bind(this, 3)} checked={this.state.type === 3}>Dice</MenuItem>
           <MenuItem onClick={this.handleClick.bind(this, 4)} checked={this.state.type === 4}>Yes/No</MenuItem>
           <MenuItem onClick={this.handleClick.bind(this, 5)} checked={this.state.type === 5}>Coin</MenuItem>
-          <MenuItem onClick={this.handleClick.bind(this, 6)} checked={this.state.type === 6}>Map</MenuItem>
           <MenuItem onClick={this.handleClick.bind(this, 7)} checked={this.state.type === 7}>Poker</MenuItem>
           <MenuItem onClick={this.handleClick.bind(this, 8)} checked={this.state.type === 8}>Mahjong</MenuItem>
-          <MenuItem onClick={this.handleClick.bind(this, 9)} checked={this.state.type === 9}>List</MenuItem>
           <MenuItem onClick={this.handleClick.bind(this, 10)} checked={this.state.type === 10}>Scissor Paper Rock</MenuItem>
           <MenuItem onClick={this.handleClick.bind(this, 11)} checked={this.state.type === 11}>Hand Front & Back</MenuItem>
+          <br />
+          <Divider />
+          <Subheader className="subheader">Advanced</Subheader>
+          <MenuItem onClick={this.handleClick.bind(this, 6)} checked={this.state.type === 6}>Map</MenuItem>
+          <MenuItem onClick={this.handleClick.bind(this, 9)} checked={this.state.type === 9}>List</MenuItem>
           <MenuItem onClick={this.handleClick.bind(this, 12)} checked={this.state.type === 12}>Time</MenuItem>
           <MenuItem onClick={this.handleClick.bind(this, 13)} checked={this.state.type === 13}>Date</MenuItem>
           <br />

@@ -1,7 +1,6 @@
 import React from 'react';
 import ContentHeader from './Common/ContentHeader';
 import ActionButton from './Common/ActionButton';
-import TextResultArea from './Common/TextResultArea';
 import { addToLocalStorage } from '../utils/localStorage';
 import { getRandomMahjong } from '../utils/generateRandom';
 
@@ -13,7 +12,7 @@ export default class ContentMahjong extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      result: ""
+      result: "",
     };
   }
 
@@ -28,7 +27,11 @@ export default class ContentMahjong extends React.Component {
       <div className="contentDiv">
         <ContentHeader title={title} />
         <ActionButton func={this.getResult} />
-        <TextResultArea result={this.state.result} />
+        <div className="resultDiv">
+        {this.state.result.split('').map(i => {
+          return <div key={i}><h3>{i}</h3></div>;
+        })}
+        </div>
       </div>
     );
   }
