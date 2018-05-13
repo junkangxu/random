@@ -14,7 +14,6 @@ const items = [
   <MenuItem key={5} value={5} primaryText="5" />,
 ];
 
-const space = '\u00A0\u00A0\u00A0\u00A0\u00A0';
 const hands = ["Front", "Back"];
 const type = "HandFrontBack";
 const title = "Hand Front & Back";
@@ -26,40 +25,13 @@ export default class ContentHandFrontBack extends React.Component {
     super(props);
     this.state = {
       numOfPeople: 0,
-      result: [],
-      strResult: ""
+      result: []
     };
   }
 
   handleChange = (event, index, value) => this.setState({numOfPeople: value});
 
   getHands = (index) => hands[index - 1];
-
-  generateCircle = (arr) => {
-    let length = arr.length;
-    let retVal = "";
-    let index1 = arr[0], index2 = arr[1], index3 = arr[2], index4 = arr[3], index5 = arr[4];
-    switch (length) {
-      case 1:
-        retVal = this.getHands(index1);
-        break;
-      case 2:
-        retVal = this.getHands(index1) + space + this.getHands(index2);
-        break;
-      case 3:
-        retVal = this.getHands(index1) + space + this.getHands(index2) + "\n" + this.getHands(index3);
-        break;
-      case 4:
-        retVal = this.getHands(index1) + space + this.getHands(index2) + "\n" + this.getHands(index3) + space + this.getHands(index4);
-        break;
-      case 5:
-        retVal = this.getHands(index1) + space + this.getHands(index2) + "\n" + this.getHands(index3) + space + this.getHands(index4) + "\n" + this.getHands(index5);
-        break;
-      default:
-        break;
-    }
-    return retVal;
-  };
 
   getRandomHand = () => {
     let numOfPeople = this.state.numOfPeople;
@@ -68,23 +40,12 @@ export default class ContentHandFrontBack extends React.Component {
       let randomInt = getRandomInt(1,2);
       retVal.push(randomInt);
     }
-    this.setState({result: retVal});
-    this.showResult(retVal);
+    let textResult = this.getTextResult(retVal);
+    addToLocalStorage(type, textResult);
+    this.setState({result: textResult});
   }
 
-  showResult = (arr) => {
-    let retVal = "";
-    let result = arr;
-    for (let i = 0; i < result.length; i++) {
-      retVal += hands[result[i] - 1];
-      retVal += " ";
-    }
-    if (retVal !== "") {
-      addToLocalStorage(type, retVal);
-    }
-    retVal = this.generateCircle(arr);
-    this.setState({strResult: retVal});
-  }
+  getTextResult = (arr) => arr.map(index => this.getHands(index));
 
   render() {
     return (
@@ -97,9 +58,7 @@ export default class ContentHandFrontBack extends React.Component {
         />
         <ActionButton func={this.getRandomHand} />
         <div className="resultDiv">
-          {this.state.strResult.split("\n").map(i => {
-            return <div key={i}><h1>{i}</h1></div>;
-          })}
+          {this.state.result.join(' ')}
         </div>
       </div>
     );
